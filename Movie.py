@@ -1,3 +1,5 @@
+import MovieProgram
+import User
 
 class Movie: # Blauplan
     # Klassenattribut
@@ -26,12 +28,12 @@ class Movie: # Blauplan
 
     # wird mit movie Programm interagieren
     def add_movie_to_movieList(self): # Methode: Film ID in der Liste hinzufugen
-        if self.mID not in MovieList.listOfMovies:
-            MovieList.append(self.mID)
+        if self.mID not in MovieProgram.listOfMovies:
+            MovieProgram.append(self.mID)
 
     # wird mit kunden_alter interagieren
     def is_allowed_for_underage(self): # Methode: Prüfen ob Kunde den Ticket kaufen kann
-        if self.mAgeRating > Kunden.altaer:
+        if self.mAgeRating > User.altaer:
             print("Age restriction")
 
     # Wird ins App erzeugt, frag mich nicht wie
@@ -40,7 +42,7 @@ class Movie: # Blauplan
 
     # das gehört vllt zu app, oder?
     def search_by_name(self): # Methode: Film suchen
-        if self.mName in MovieList:
+        if self.mName in MovieProgram:
             print("Tickets für" + self.mName + "sind verfügbar")
 
     # wird entweder mit Saal interagieren

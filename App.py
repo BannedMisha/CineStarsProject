@@ -3,6 +3,7 @@
 #               >create an account
 #               >delete an account
 #               >look up the MovieProgram
+#               >for a specific movie, see how many seats are still available
 #               >purchase a movie ticket
 #               >cancel the purchase of a ticket
 #               >purchase popcorn at the popcorn machine
@@ -29,6 +30,11 @@ class App:
     # Prints out the complete movie program
     # Takes the list from the MovieProgram class and returns it
     def show_program(self,movieList):
+        print()
+
+    # Shows available seats of a specific movie
+    # Takes MovieProgram as input
+    def show_availability(self,movieProgram):
         print()
 
     # Lets the User buy a ticket
