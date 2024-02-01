@@ -1,6 +1,6 @@
 """
     This class handles the attributes of our cinemas
-    Right now we only have one cinema, if we implement it now, it's expandable
+    Right now we only have one cinema, if we implement it now, it's expandable. Which is nice.
 """
 
 class Cinema:

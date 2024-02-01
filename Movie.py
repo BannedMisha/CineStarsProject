@@ -6,7 +6,7 @@ class Movie:
     aName        = ""
     aLength      = 0
     aGenre       = ""
-    aPrice       = 0,00                 # TODO: In MovieProgram?
+    aPrice       = 0.01                 # TODO: In MovieProgram?
     aReleaseDate = ""
     aAgeRating   = 0
     aStarRating  = 0
