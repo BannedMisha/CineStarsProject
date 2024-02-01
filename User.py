@@ -1,64 +1,27 @@
 """
-Klasse Kunde
-
-Useranlage:
-Oeffnen externe Datei
-Lesen aus externer Datei
-Eingabe Vorname
-Eingabe Nachname
-Eingabe Geburtsdatum
-Eingabe Kontaktmoeglichkeit: emailAdresse und/oder Handynummer fuer Informationen
-Auswahl Bevorzugte Zahlungsmethode
-Zur Auswahl: Prepaid, Kreditkarte, Rechnung(Bezahlautomat)
-User-ID automatisch vergeben (Zahl?, oder Generierung aus Name und Geburtsdatum?)
-Schreiben in externe Datei
-Schliessen externe Datei
-
-Daten aendern:
-Oeffnen externe Datei
-Lesen aus externer Datei
-(Menu fuer Aktion) - eigentlich auch aus App heraus
-Name aendern
-Zahlungsmethode aendern
-Kontaktmoeglichkeit aendern
-Schreiben in externe Datei
-Schliessen externe Datei
-
-Userloeschung:
-Oeffnen externe Datei
-Lesen aus externer Datei
-Kontokontrolle
-	Wenn Kontostand „0“ dann weiter, 		sonst Abbruch, und Hinweis auf Ausgleich
-Sicherheitsabfrage
-	„ja“ dann weiter, 		„nein“ dann Abbruch
-Schreiben in externe Datei
-Schliessen externe Datei
-
-Zahlungsmoeglichkeiten:
-Oeffnen externe Datei
-Lesen aus externer Datei
-Lasten draufbuchen (Trigger von App)
-Kontostand sehen
-Lastenausgleich nach Zahlungsmethode (Prepaid, Kredikarte, Rechnung auf Bezahlautomat beim Ausgang)
-Schreiben in externe Datei
-Schliessen externe Datei
-
-
-
-
-Externe Datei: Kunde.txt
-Kunde = {
-1:{UserID, Name, Vorname, Geburtsdatum, Kontaktmoeglichkeit, Zahlungsmethode, Kontostand}
-2:{UserID, Name, Vorname, Geburtsdatum, Kontaktmoeglichkeit, Zahlungsmethode, Kontostand}
-}
+    Class User handles all the attributes of our movie patrons
 """
-
-
-
 
 class User:
 
-    userID = "placeholder"
+    aID        = ""
+    aFirstName = ""
+    aLastName  = ""
+    aBirthDate = ""       # variable type is date
+    aEmail     = ""
+    aPassword  = ""       # Probably don't want it to just exist like that as plain text ...
 
-    def __init__(self, uID):
-        self.userID = uID
+    def __init__(self,aID,aFiN,aLaN,aBiD,aEma,aPas):
+        self.aID        = aID
+        self.aFirstName = aFiN
+        self.aLastName  = aLaN
+        self.aBirthDate = aBiD
+        self.aEmail     = aEma
+        self.aPassword  = aPas
+
+    # getter/setter methods
+    def set_user_info(self):
+        pass
+
+    def get_user_info(self):
+        pass
