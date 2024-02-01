@@ -9,7 +9,7 @@ class Theater:
     aMaxCapacity = 0
     aCurCapacity = 0
     aSeatMatrix  = [[],           # Shows a matrix of available seats in a theater
-                   [],            # It only sounds complex because it is
+                   [],            # It only sounds complicated because it is
                    []]
 
     def __init__(self,aNam,aMax,aCur,aSeM):

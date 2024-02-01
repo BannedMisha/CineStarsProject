@@ -4,20 +4,22 @@
 
 class User:
 
-    aID        = ""
-    aFirstName = ""
-    aLastName  = ""
-    aBirthDate = ""       # variable type is date
-    aEmail     = ""
-    aPassword  = ""       # Probably don't want it to just exist like that as plain text ...
+    aID          = ""
+    aAccountName = ""
+    aFirstName   = ""
+    aLastName    = ""
+    aBirthDate   = ""       # variable type is date
+    aEmail       = ""
+    aPassword    = ""       # Probably don't want it to just exist like that as plain text ...
 
-    def __init__(self,aID,aFiN,aLaN,aBiD,aEma,aPas):
-        self.aID        = aID
-        self.aFirstName = aFiN
-        self.aLastName  = aLaN
-        self.aBirthDate = aBiD
-        self.aEmail     = aEma
-        self.aPassword  = aPas
+    def __init__(self,aID,aAcN,aFiN,aLaN,aBiD,aEma,aPas):
+        self.aID          = aID
+        self.aAccountName = aAcN
+        self.aFirstName   = aFiN
+        self.aLastName    = aLaN
+        self.aBirthDate   = aBiD
+        self.aEmail       = aEma
+        self.aPassword    = aPas
 
     # getter/setter methods
     def set_user_info(self):

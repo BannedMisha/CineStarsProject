@@ -1,9 +1,9 @@
 """
-    This class handles the move program
+    This class handles the movie program
 """
 
 class MovieProgram:
-    aCinema    = ""    # If we keep it as a class, this specifies which cinema this program is for. Make class Cinema?
+    aCinema    = ""
     aMovieList = []
 
     def __init__(self,aCin,aMoL):

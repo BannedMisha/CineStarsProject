@@ -21,11 +21,13 @@
         Potential future functionality:
         >Link social media account to app
         >Login with social media account (Apple, Google, Twitter, etc.)
+
+    TODO: Graphical Interface
 """
 
 class App:
 
-    appUser = "placeholder"
+    appUser = ""
 
     def __init__(self,appU):
         self.appUser = appU
