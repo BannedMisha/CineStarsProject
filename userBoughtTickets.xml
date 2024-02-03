@@ -20,3 +20,12 @@ class Kino:
         for i in range(num_tickets):
             if (film_index, i+1) in self.reservierte_plaetze:
                 del self.reservierte_plaetze[(film_index, i+1)]
+
+
+# Tickets kaufen und stornieren
+    kino.ticket_kaufen(1, 3)
+    programm.verfuegbarkeit_anzeigen()
+
+    kino.ticket_stornieren(1, 2)
+    programm.verfuegbarkeit_anzeigen()
+    
