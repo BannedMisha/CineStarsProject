@@ -18,7 +18,7 @@ class Theater:
         self.aCurCapacity = aCur
         self.aSeatMatrix  = aSeM
 
-    # getter/setter methods
+    # getter/setter methoden benutzt
     def set_theater_info(self):
         pass
 
