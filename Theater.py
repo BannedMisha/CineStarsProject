@@ -5,6 +5,7 @@
 
 class Theater:
 
+    aID          = ""
     aName        = ""
     aMaxCapacity = 0
     aCurCapacity = 0
@@ -12,7 +13,8 @@ class Theater:
                    [],            # It only sounds complicated because it is
                    []]
 
-    def __init__(self,aNam,aMax,aCur,aSeM):
+    def __init__(self, aID, aNam, aMax, aCur, aSeM):
+        self.aID          = aID
         self.aName        = aNam
         self.aMaxCapacity = aMax
         self.aCurCapacity = aCur
