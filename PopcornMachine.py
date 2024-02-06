@@ -39,3 +39,55 @@ class PopcornMachine:
     # Fills up a cup of a choice beverage and dispenses it to the user
     def make_drink(self):
         pass
+
+
+
+# ============================================= Franke's Code Starts Here =============================================
+
+
+
+
+#check Vorrat
+def chckStock():
+    #Vorrat ist komplett vorhanden
+    print("Vorrat pass")
+
+
+#Anzeige Menu
+def popcornMenu():
+    offer_popcorn = ["gross-suess",  "mittel-suess", "klein-suess", "gross-salzig", "mittel-salzig", "klein-salzig"]
+    print (*list(enumerate(offer_popcorn, start = 1)),  sep="\n")
+
+#Auswahl Menu / Uebergabe an Maschine
+def choosePopcorn():
+    order = input("Welches Popkorn moechten Sie?: ")
+    if order == "1":
+        print("gross-suess an Maschine uebergeben")
+    elif order == "2":
+        print("mittel-suess an Maschine uebergeben")
+    elif order == "3":
+        print("klein-suess an Maschine uebergeben")
+    elif order == "4":
+        print("gross-salzig an Maschine uebergeben")
+    elif order == "5":
+        print("mittel-salzig an Maschine uebergeben")
+    elif order == "6":
+        print("klein-salzig an Maschine uebergeben")
+    else:
+        print("falsche Eingabe -- Abbruch, Hauptmenu")
+
+#Uebergabe an Maschine
+def order2Maschine():
+    pass
+
+#Anzeige von Info von Maschine, dass Popcorn fertig
+def outputTray():
+    print("Bitte Fach 3 oeffnen.")
+
+#Aktion Fach oeffnen
+def openTray():
+    input("Fachnummer 3 oeffnen")
+
+#Kundenkonto belasten
+def billing():
+    pass
