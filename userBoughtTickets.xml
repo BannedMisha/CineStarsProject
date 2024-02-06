@@ -1,3 +1,31 @@
-<!--
-  I forgot how XML works ...
--->
+#Arlind hat diesen Code gemacht ( ich weiss leider nicht ob es richtig ist)
+
+class Kino:
+    def __init__(self, film_programm):
+        self.film_programm = film_programm
+        self.reservierte_plaetze = {}
+
+    def ticket_kaufen(self, film_index, num_tickets):
+        film = self.film_programm.filme[film_index - 1]
+        print(f"\nKaufe {num_tickets} Tickets für {film.titel}")
+        
+        for i in range(num_tickets):
+            self.reservierte_plaetze[film_index, i+1] = True
+
+    def ticket_stornieren(self, film_index, num_tickets):
+        film = self.film_programm.filme[film_index - 1]
+        print(f"\nStorniere {num_tickets} Tickets für {film.titel}")
+        
+
+        for i in range(num_tickets):
+            if (film_index, i+1) in self.reservierte_plaetze:
+                del self.reservierte_plaetze[(film_index, i+1)]
+
+
+# Tickets kaufen und stornieren
+    kino.ticket_kaufen(1, 3)
+    programm.verfuegbarkeit_anzeigen()
+
+    kino.ticket_stornieren(1, 2)
+    programm.verfuegbarkeit_anzeigen()
+    
