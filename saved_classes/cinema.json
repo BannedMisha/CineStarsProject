@@ -1,0 +1,22 @@
+{
+  "cinemas": [
+    {
+      "aID": "C001",
+      "aNam": "CineKon",
+      "aLoc": "Konstanz",
+      "aAmT": 3
+    },
+    {
+      "aID": "C002",
+      "aNam": "Kino Allensbach",
+      "aLoc": "Allensbach",
+      "aAmT": 2
+    },
+    {
+      "aID": "C003",
+      "aNam": "Stuttgart CinePlex",
+      "aLoc": "Stuttgart",
+      "aAmT": 5
+    }
+  ]
+}

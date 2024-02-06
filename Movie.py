@@ -3,6 +3,7 @@
 """
 
 class Movie:
+    aID          = ""
     aName        = ""
     aLength      = 0
     aGenre       = ""
@@ -15,17 +16,18 @@ class Movie:
     aDescription = "To be announced"    # TODO: Save externally?
 
 
-    def __init__(self,mNam,mLen,mGen,mPri,mReD,mAgR,mStR,a2D,a3D,mDes):
-        self.aName        = mNam
-        self.aLength      = mLen
-        self.aGenre       = mGen
-        self.aPrice       = mPri
-        self.aReleaseDate = mReD
-        self.aAgeRating   = mAgR
-        self.aStarRating  = mStR
+    def __init__(self,aID,aNam,aLen,aGen,aPri,aReD,aAgR,aStR,a2D,a3D,aDes):
+        self.aID          = aID
+        self.aName        = aNam
+        self.aLength      = aLen
+        self.aGenre       = aGen
+        self.aPrice       = aPri
+        self.aReleaseDate = aReD
+        self.aAgeRating   = aAgR
+        self.aStarRating  = aStR
         self.a2DPossible  = a2D
         self.a3DPossible  = a3D
-        self.aDescription = mDes
+        self.aDescription = aDes
 
 
     # Getter/Setter Methods

@@ -7,8 +7,11 @@ CineStars is a concept for a fully automated cinema including a companion phone 
 # I copied the whole main method from another code I made before. It sucks. Good enough for now.
 
 import os
+import json
 
+import AdminApp
 import App
+import Cinema as cin
 
 
 # To clear console
@@ -23,9 +26,8 @@ def cmnd():
     cls()
 
 
-# Starts the game
+# Starts the app
 def start():
-
     print("===============================================================")
     print("CineStars App")
     print()
@@ -37,8 +39,13 @@ def start():
     userInput = input("What do you want to do? ")
 
 
+# Does what you think it would do
+def test_function_to_test_stuff(file, aID):
+    pass
+
 
 # When main gets initialized, clears console
 if __name__ == '__main__':
     cls()
-    start()
+    #start()
+    #test_function_to_test_stuff('saved_classes/cinema.json','C002')

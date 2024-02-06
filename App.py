@@ -18,7 +18,7 @@
         >notifications for recent release
         >Search for movies by name/rating/etc.
 
-        Potential future functionality:
+    Potential future functionality:
         >Link social media account to app
         >Login with social media account (Apple, Google, Twitter, etc.)
 

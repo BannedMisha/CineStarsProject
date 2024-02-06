@@ -10,10 +10,12 @@
 
 class PopcornMachine:
 
+    aID        = ""
     aPopMenu   = []
     aDrinkMenu = []
 
-    def __init__(self,aPoM,aDrM):
+    def __init__(self, aID, aPoM, aDrM):
+        self.aID        = aID
         self.aPopMenu   = aPoM
         self.aDrinkMenu = aDrM
 

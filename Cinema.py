@@ -10,7 +10,7 @@ class Cinema:
     aLocation       = ""
     aAmountTheaters = 0
 
-    def __init__(self,aID,aNam,aLoc,aAmT):
+    def __init__(self, aID, aNam, aLoc, aAmT):
         self.aID             = aID
         self.aName           = aNam
         self.aLocation       = aLoc

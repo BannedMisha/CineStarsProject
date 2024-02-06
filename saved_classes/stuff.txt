@@ -1,0 +1,10 @@
+    #with open('saved_classes/cinema.json') as jCin:
+    #    data = json.load(jCin)
+
+    #for cinema in data['cinemas']:
+    #    print(cinema['aID'],cinema['aLoc'])
+
+
+
+    for cinema in data['cinemas','a']:
+        json.dump(c1, jCin, indent=2)

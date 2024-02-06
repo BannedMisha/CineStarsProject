@@ -3,10 +3,12 @@
 """
 
 class MovieProgram:
+    aID        = ""
     aCinema    = ""
     aMovieList = []
 
-    def __init__(self,aCin,aMoL):
+    def __init__(self,aID, aCin, aMoL):
+        self.aID        = aID
         self.aCinema    = aCin
         self.aMovieList = aMoL
 
