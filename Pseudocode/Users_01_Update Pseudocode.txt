@@ -1,0 +1,163 @@
+Json Modul importieren
+tool_user Modul importieren
+
+# Klasse für Benutzer erstellen.
+# Alle Attribute zur Klasse hinzufügen
+Klasse User:
+    Counter = 0  # Klassenvariable
+
+    Methode und Attributten declarieren(self, aAccountName, aFiN, aLaN, aBiD, aEma, aPas, aPas2):
+
+        User.user_counter += 1
+        self.aID = User.user_counter
+        self.aAccountName = aAccountName
+        self.aFirstName = aFiN
+        self.aLastName = aLaN
+        self.aBirthDate = aBiD
+        self.aEmail = aEma
+        self.aPassword = aPas
+        self.aPassword2 = aPas2
+
+
+
+# Variable initialisieren, um die Erstellung eines Kontos zu überspringen, wenn es bereits erstellt wurde
+has_account = False
+
+# Function, die eine Instanz des Objekts speichert
+Funktion create_account():
+    global has_account
+    aAccountName = Eingabe("Choose your username: ")
+    aFirstName = Eingabe("First Name: ")
+    aLastName = Eingabe("Last Name: ")
+    aBirthDate = str(Aufruf der Funktion aus Tools.check_date_input())
+    aEmail = Aufruf der Funktion aus Tools.email_checker()
+    aPassword = Aufruf der Funktion aus Tools.repeat_password_check()
+
+    has_account = True
+    user = Instanz der Klasse (aAccountName, aFirstName, aLastName, aBirthDate, aEmail, aPassword, aPassword))
+    user_info = user.__dict__  # Konvertieren Sie die neue Benutzerinstanz in ein Dictionary
+
+    Ausgabe("Your account was successfully created!")
+    user_info Ausgeben
+
+# Speichert die Instanz in der JSON-Datei
+Funktion load_save_account():
+    Try:
+        JSON Datei  im Schreibmodus öffnen("users_archive.json", "r") und als users_archive:
+            Try:
+                data = Abrufen der JSON-Datei(users_archive)
+                saved_users = data.get('users', [])
+                counter = data.get('aID', 0)
+            Ausnahme json.decoder.JSONDecodeError:
+                # Im Falle einer leeren oder ungültigen JSON-Datei
+                saved_users = Liste
+    Ausnahme Datei wurde nicht gefunden:
+        saved_users = Liste
+    # Wenn der Benutzer kein Konto hat, wird die Erstellungsfunktion aufgerufen und zusammen mit den abgerufenen Informationen gespeichert
+    Wenn nicht has_account:
+        new_user_info = Function create_account wird abgerufen
+        new_user_info['aID'] = User.user_counter
+        # abgerufene Informationen plus den neuen
+        all_users = abgerufenen Informationen + die neue Instanz
+
+        Json Datei im Schreibmodus öffnen("users_archive.json", "w") und als users_archive speichern:
+            data = dictionary das enthelt'users': all_users, 'user_counter': User.user_counter
+            Dictionary wird in JSON-Datei gespeichert
+
+load_save_account function abrufen
+
+# Methode zum Einloggen.
+# Soll nur möglich sein, wenn ein Konto erstellt wurde.
+
+
+is_logged = Falsch
+
+Funktion log_in():
+    die globale Variable has_account aufrufen
+    die globale Variable has_account aufrufen
+    Wenn has_account ist True:
+        Ausgabe("Now let us get started. Let's log in!")
+        entered_username = Eingabe("Please enter your username: ")
+        entered_password = Eingabe("Please enter your password: ")
+        JSON Datei im Schreibmodus öffnen("users_archive.json", "w") und als users_archive speichern:
+            Try:
+                my_json = JSON Datei auslesen
+            except json.decoder.JSONDecodeError:
+                my_json = {'users': [], 'user_counter': 0}
+        actual_password = search_the_password Function wird abgerufen(mein_json, eingegebener_benutzername)
+
+        Wenn entered_password == actual_password:
+            Ausgabe("You have successfully logged in!")
+            is_logged = True
+        sonst:
+            Ausgabe("The password or the username is incorrect, please try again")
+
+log_in Function abrufen
+
+# Funktion zum Ausloggen. Überprüft den Status und ändert dann den Status
+Funktion log_out():
+    die globale Variable is_logged aufrufen
+    Wenn is_logged ist True:
+        Ausgabe("You have successfully logged out")
+        is_logged = False
+    sonst:
+        Drucken("Don't worry, you were not logged in")
+
+log_out Funktion aufrufen
+
+
+Funktion search_and_modify(JSON Datei):
+    # Der Benutzer wird nach dem zu speichernden Wert gefragt
+    account_to_modify = int(Eingabe("Please enter your ID: "))
+    Ausgabe("Was möchten Sie ändern? ")
+    Ausgabe("1.Account Name\n"
+          "2.First Name\n"
+          "3.Last Name\n"
+          "4.Birth Date\n"
+          "5.Password\n"
+          "6.Exit")
+    thing_to_modify = int(Eingabe("Please enter you choice: "))
+    new_value = str(Eingabe("Enter the new value: "))
+
+    # Sucht und ersetzt die Werte
+    Für user in json_datei.get('Benutzer', []):
+        Wenn user.get("aID") == konto_zu_ändern:
+            Wenn thing_to_modify == 1:
+                user["aAccountName"] = new_value
+                Ausgabe("Changes have been saved")
+                Schleift durch alle Variablen der JSON-Datei
+            sonst:
+                Ausgabe("Invalid choice.")
+
+# JSON Datei öffnen,search_and_modify Funktion aufrufen und speichern
+Json Datei  im Lesemodus öffnen("users_archive.json", "r") und als users_archive speichern:
+    data = json.load(users_archive)
+
+search_and_modify Funktion aufrufen
+
+Json Datei  im Schreibmodus öffnen("users_archive.json", "r") und als users_archive speichern::
+    json.dump(data, users_archive, einrücken=2)
+
+# Funktion zum Löschen eines Benutzers
+Funktion delete_user(account_to_delete):
+    Try:
+        JSON Datei  im Lesemodus öffnen("users_archive.json", "r") und als users_archive speichern:
+            all_users = json.load(users_archive)
+
+        für user in all_users['Benutzer']:
+            Wenn user.get("aID") == account_to_delete:
+                all_users["Benutzer"].remove(user)
+                Ausgabe("Your account and all the associated data has been deleted")
+
+        JSON Datei  im Schreibmodus öffnen("users_archive.json", "w") und als users_archive speichern:
+            json.dump(all_users, users_archive, einrücken=2)
+
+        Ausgabe("Account has been deleted!")
+
+    außer FileNotFoundError:
+        Ausgabe("Something went wrong.")
+
+delete_request = int(Eingabe("Please note that the deletion is permanent and the data can't be recovered. Enter your ID: "))
+
+delete_user Fuktion aufrufen(delete_request)
+```
