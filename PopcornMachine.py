@@ -8,6 +8,8 @@
              DO NOT use Popcorn Machine™ to create world ending devices.
 """
 
+import Tools
+
 class PopcornMachine:
 
     aID        = ""
@@ -42,52 +44,25 @@ class PopcornMachine:
 
 
 
-# ============================================= Franke's Code Starts Here =============================================
+# This function creates the popcorn menu
+# The list is populated by the names (aNam) from all entries of pop_popcorn.json
+def create_popcorn_menu():
+    popList = Tools.read_multiple_from_file("saved_classes/pop_popcorn.json", "popcornTypes", "aNam")
+    return popList
 
 
+# This function creates the drinks menu
+# The list is populated by the names (aNam) from all entries of pop_drinks.json
+def create_drink_menu():
+    driList = Tools.read_multiple_from_file("saved_classes/pop_drink.json", "drinks", "aNam")
+    return driList
 
+# This function makes the popcorn
+# Popcorn is being magically created
+# Then the tray opens and closes after a set time or until the customer took out their item
+def prepare_popcorn():
+    print("\n***\n> Popcorn has been created!\n***\n")
 
-#check Vorrat
-def chckStock():
-    #Vorrat ist komplett vorhanden
-    print("Vorrat pass")
-
-
-#Anzeige Menu
-def popcornMenu():
-    offer_popcorn = ["gross-suess",  "mittel-suess", "klein-suess", "gross-salzig", "mittel-salzig", "klein-salzig"]
-    print (*list(enumerate(offer_popcorn, start = 1)),  sep="\n")
-
-#Auswahl Menu / Uebergabe an Maschine
-def choosePopcorn():
-    order = input("Welches Popkorn moechten Sie?: ")
-    if order == "1":
-        print("gross-suess an Maschine uebergeben")
-    elif order == "2":
-        print("mittel-suess an Maschine uebergeben")
-    elif order == "3":
-        print("klein-suess an Maschine uebergeben")
-    elif order == "4":
-        print("gross-salzig an Maschine uebergeben")
-    elif order == "5":
-        print("mittel-salzig an Maschine uebergeben")
-    elif order == "6":
-        print("klein-salzig an Maschine uebergeben")
-    else:
-        print("falsche Eingabe -- Abbruch, Hauptmenu")
-
-#Uebergabe an Maschine
-def order2Maschine():
-    pass
-
-#Anzeige von Info von Maschine, dass Popcorn fertig
-def outputTray():
-    print("Bitte Fach 3 oeffnen.")
-
-#Aktion Fach oeffnen
-def openTray():
-    input("Fachnummer 3 oeffnen")
-
-#Kundenkonto belasten
-def billing():
-    pass
+# Same for drinks
+def prepare_drinks():
+    print("\n***\n> Drink has been created!\n***\n")

@@ -10,7 +10,7 @@ class Movie:
     aPrice       = 0.01                 # TODO: In MovieProgram?
     aReleaseDate = ""
     aAgeRating   = 0
-    aStarRating  = 0
+    aStarRating  = 0.1
     a2DPossible  = False
     a3DPossible  = False
     aDescription = "To be announced"    # TODO: Save externally?

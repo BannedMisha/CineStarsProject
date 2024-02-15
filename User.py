@@ -15,9 +15,8 @@ class User:
     aBirthDate   = ""       # variable type is date
     aEmail       = ""
     aPassword    = ""       # Probably don't want it to just exist like that as plain text ...
-    aPassword    = ""
 
-    def __init__(self, aID, aAcN, aFiN, aLaN, aBiD, aEma, aPas, aPas2):
+    def __init__(self, aID, aAcN, aFiN, aLaN, aBiD, aEma, aPas):
         self.aID          = aID
         self.aAccountName = aAcN
         self.aFirstName   = aFiN
@@ -25,7 +24,6 @@ class User:
         self.aBirthDate   = aBiD
         self.aEmail       = aEma
         self.aPassword    = aPas
-        self.aPassword2   = aPas2       # Dennis: There's probably a better way to check for identical password
 
     # getter/setter methods
     def set_user_info(self):

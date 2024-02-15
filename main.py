@@ -12,6 +12,7 @@ import json
 import AdminApp
 import App
 import Cinema as cin
+import PopcornMachine
 
 
 # To clear console
@@ -40,12 +41,14 @@ def start():
 
 
 # Does what you think it would do
-def test_function_to_test_stuff(file, aID):
+def test_function_to_test_stuff():
+
+    App.buy_popcorn("PM0001")
+
     pass
 
 
 # When main gets initialized, clears console
 if __name__ == '__main__':
     cls()
-    #start()
-    #test_function_to_test_stuff('saved_classes/cinema.json','C002')
+    test_function_to_test_stuff()

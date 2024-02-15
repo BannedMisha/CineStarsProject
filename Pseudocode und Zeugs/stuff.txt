@@ -1,0 +1,12 @@
+
+Notes:
+> For now classes are saved as JSON dictionaries not classes, probably want to change that
+    > In AdminApp there's a function that can convert IDs to classes
+    > We'll do that later
+
+> Write to file functions don't check if the file exists correctly
+
+> MovieProgram needs to be layed out in a time table, Monday-Sunday, show a list of each day (time day tuple?)
+    > Seats are American system
+
+> Prices and stuff for the popcorn and drinks?

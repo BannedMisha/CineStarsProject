@@ -1,4 +1,43 @@
 {
-  "movies": [
-  ]
+    "movies": [
+        {
+            "aID": "M0001",
+            "aNam": "Armageddon",
+            "aLen": 89,
+            "aGen": "Action",
+            "aPri": 9.99,
+            "aReD": "10.10.2002",
+            "aAgR": 16,
+            "aStR": 4.2,
+            "a2D": true,
+            "a3D": false,
+            "aDes": "This is a movie about Bruce Willis saving the world."
+        },
+        {
+            "aID": "M0002",
+            "aNam": "Forest Gump",
+            "aLen": 124,
+            "aGen": "Drama",
+            "aPri": 9.99,
+            "aReD": "10.1.1990",
+            "aAgR": 12,
+            "aStR": 4.8,
+            "a2D": true,
+            "a3D": false,
+            "aDes": "Forest Gump is having a fun time being disabled and stuff."
+        },
+        {
+            "aID": "M0003",
+            "aNam": "James Bond 007",
+            "aLen": 117,
+            "aGen": "Action",
+            "aPri": 9.99,
+            "aReD": "15.12.2020",
+            "aAgR": 12,
+            "aStR": 3.8,
+            "a2D": true,
+            "a3D": true,
+            "aDes": "Another James Bond movie idk."
+        }
+    ]
 }

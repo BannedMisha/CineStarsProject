@@ -1,4 +1,25 @@
 {
-  "drinks": [
-  ]
+    "drinks": [
+        {
+            "aID": "D0001",
+            "aNam": "Coke S",
+            "aSiz": "Small",
+            "aFla": "Coke",
+            "aAdS": true
+        },
+        {
+            "aID": "D0002",
+            "aNam": "Coke M",
+            "aSiz": "Medium",
+            "aFla": "Coke",
+            "aAdS": true
+        },
+        {
+            "aID": "D0003",
+            "aNam": "Coke L",
+            "aSiz": "Large",
+            "aFla": "Coke",
+            "aAdS": true
+        }
+    ]
 }
