@@ -1,0 +1,130 @@
+<CreateAccountScreen>:
+    name: "third"
+    MDCard:
+        size_hint:None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+
+        ScrollView:
+            do_scroll_x:False
+            do_scroll_y:True
+
+            GridLayout:
+                cols:1
+                spacing: 10
+                size_hint_y: None
+                height:self.minimum_height
+                anchor_x: 'center'
+
+
+                MDLabel:
+                    id: create_account
+                    text: "Create an account"
+                    font_size: 20
+                    halign: 'center'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 25
+
+                MDTextField:
+                    mode: "round"
+                    id: person
+                    hint_text: "Username"
+                    icon_right:"account"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+                MDTextField:
+                    mode: "round"
+                    id: Firstname
+                    hint_text: "First name"
+                    icon_right:"rename"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+
+                MDTextField:
+                    mode: "round"
+                    id: Lastname
+                    hint_text: "Last name"
+                    icon_right:"rename"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+                MDTextField:
+                    mode: "round"
+                    id: bday
+                    hint_text: "Birth-date"
+                    icon_right:"calendar-range"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+                MDTextField:
+                    mode: "round"
+                    id: email
+                    hint_text: "E-mail adress"
+                    icon_right:"email"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+
+                MDTextField:
+                    mode: "round"
+                    id: pas1
+                    hint_text: "Chose your password"
+                    icon_right:"eye-off"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+                    password: True
+
+                MDTextField:
+                    mode: "round"
+                    id: pas2
+                    hint_text: "Repeat your password"
+                    icon_right:"eye-off"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+
+                MDRoundFlatButton:
+                    text: "SUBMIT"
+                    font_size:12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "up"
+
+                MDRoundFlatButton:
+                    text: "CLEAR"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press: app.clear()
+
+                MDRoundFlatButton:
+                    text: "GO BACK"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "first"
+                        root.manager.transition.direction = "down"
+
+                Image:
+                    source: 'C:/Users/Mara/Desktop/logo.png'
