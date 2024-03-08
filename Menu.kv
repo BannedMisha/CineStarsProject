@@ -1,0 +1,90 @@
+<MenuScreen>:
+    name: "fourth"
+    MDCard:
+        size_hint:None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+
+        ScrollView:
+            do_scroll_x:False
+            do_scroll_y:True
+
+            GridLayout:
+                cols:1
+                spacing: 10
+                size_hint_y: None
+                height:self.minimum_height
+                anchor_x: 'center'
+
+
+                MDLabel:
+                    id: pers_info
+                    text: "Menu"
+                    font_size: 20
+                    halign: 'center'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 25
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Cinema listings"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "sixth"
+                        root.manager.transition.direction = "down"
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Food and Drinks"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "seventh"
+                        root.manager.transition.direction = "down"
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Wishlist"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "eighth"
+                        root.manager.transition.direction = "down"
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "My Account"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "fifth"
+                        root.manager.transition.direction = "up"
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "My orders"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "ninth"
+                        root.manager.transition.direction = "down"
+
+
+                MDRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Log out"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "first"
+                        root.manager.transition.direction = "down"
+
+
+
+
