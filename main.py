@@ -43,8 +43,13 @@ def start():
 # Does what you think it would do
 def test_function_to_test_stuff():
 
-    App.buy_popcorn("PM0001")
+    App.edit_user_account("U001", "The Flayer", "John B.", "Slayin",
+                            "1999", "ass@slayin.com", "poophead")
 
+    #App.delete_user_account("U001")
+
+    #App.login_account("The Slayer", "poophead")
+    #App.logout_account()
     pass
 
 

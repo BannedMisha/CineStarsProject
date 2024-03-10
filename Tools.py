@@ -8,7 +8,6 @@ import json
 # Function to save a classes attributes to their corresponding JSON file
 # Better than to have duplicates of this functionality in each "create"-function
 def write_to_file(file, instance, category) -> None:
-    try:
         with open(file) as jFile:
             data = json.load(jFile)
 
@@ -16,9 +15,6 @@ def write_to_file(file, instance, category) -> None:
 
         with open(file, 'w') as wFile:
             json.dump(data, wFile, indent=4)
-
-    except FileNotFoundError:
-        print("ERROR: File not found")
 
 
 # Function to return contents from a JSON file
@@ -49,6 +45,35 @@ def read_multiple_from_file(file, category, item):
             contentList.append(content)
 
     return contentList
+
+# With this function you can delete an entry from a json file
+# This will not completely delete it, aIDs will remain unique and one-use only, but it will scrub the information
+def delete_entry_from_file(file, ID, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aID') == ID:
+            for key in entry.keys():
+                if key != 'aID':
+                    entry[key] = None
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
+
+
+def edit_entry_from_file(file, ID, instance, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aID') == ID:
+            for key, value in instance.items():
+                if key != 'aID':
+                    entry[key] = value
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
 
 
 

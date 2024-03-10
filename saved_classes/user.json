@@ -1,85 +1,13 @@
 {
-  "users": [
-    {
-      "aID": 2,
-      "aAccountName": "maria",
-      "aFirstName": "ad",
-      "aLastName": "fgd",
-      "aBirthDate": "01.01.2001",
-      "aEmail": "m@d.com",
-      "aPassword": "123",
-      "aPassword2": "123"
-    },
-    {
-      "aID": 3,
-      "aAccountName": "daria",
-      "aFirstName": "dg",
-      "aLastName": "fg",
-      "aBirthDate": "01.01.1000",
-      "aEmail": "m@f.com",
-      "aPassword": "12",
-      "aPassword2": "12"
-    },
-    {
-      "aID": 5,
-      "aAccountName": "maruc",
-      "aFirstName": "df",
-      "aLastName": "dsf",
-      "aBirthDate": "01.01.1001",
-      "aEmail": "m@df.com",
-      "aPassword": "12",
-      "aPassword2": "12"
-    },
-    {
-      "aID": 6,
-      "aAccountName": "sdv",
-      "aFirstName": "sd",
-      "aLastName": "sdf",
-      "aBirthDate": "01.01.2001",
-      "aEmail": "m@g.com",
-      "aPassword": "12",
-      "aPassword2": "12"
-    },
-    {
-      "aID": 7,
-      "aAccountName": "gfbf",
-      "aFirstName": "fdg",
-      "aLastName": "fdg",
-      "aBirthDate": "01.01.2000",
-      "aEmail": null,
-      "aPassword": "12",
-      "aPassword2": "12"
-    },
-    {
-      "aID": 8,
-      "aAccountName": "asdfg",
-      "aFirstName": "dfg",
-      "aLastName": "fdg",
-      "aBirthDate": "01.01.2002",
-      "aEmail": null,
-      "aPassword": "12sdfg1",
-      "aPassword2": "12sdfg1"
-    },
-    {
-      "aID": 9,
-      "aAccountName": "fgfdg",
-      "aFirstName": "fdg",
-      "aLastName": "dfg",
-      "aBirthDate": "01.01.2002",
-      "aEmail": null,
-      "aPassword": "12",
-      "aPassword2": "12"
-    },
-    {
-      "aID": 10,
-      "aAccountName": "sdg",
-      "aFirstName": "sdg",
-      "aLastName": "sdg",
-      "aBirthDate": "01.01.2002",
-      "aEmail": "m@g.com",
-      "aPassword": "12345",
-      "aPassword2": "12345"
-    }
-  ],
-  "user_counter": 10
+    "users": [
+        {
+            "aID": "U001",
+            "aAcN": "The Flayer",
+            "aFiN": "John B.",
+            "aLaN": "Slayin",
+            "aBiD": "1999",
+            "aEma": "ass@slayin.com",
+            "aPas": "poophead"
+        }
+    ]
 }

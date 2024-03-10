@@ -1,7 +1,6 @@
 """
     The class App controls most parts of the functionality for the User
 
-    TODO: Does this even need to be a class?
     With this App the User can:
         >create an account
         >delete an account
@@ -29,37 +28,64 @@ import json
 import Tools
 import PopcornMachine
 
-class App:
-
-    appUser = ""
-
-    def __init__(self,appU):
-        self.appUser = appU
+loggedIn = False
 
 # In this method the User can create their account
-# It takes in the User's details via userinput and attaches them to an instance of the User class (formerly Kunden)
+# It takes in the User's details via userinput and attaches them to an instance of the User class
 # Also needs to create a password (and account name), probably best to have that be an attribute in the User class
-def create_account(appU):
-    pass
+def create_user_account(aID, aAcN, aFiN, aLaN, aBiD, aEma, aPas) -> None:
+    file = "saved_classes/user.json"
+    inst = {"aID":aID, "aAcN":aAcN, "aFiN":aFiN, "aLaN":aLaN, "aBiD":aBiD, "aEma":aEma, "aPas":aPas}
+    cate = "users"
+
+    Tools.write_to_file(file, inst, cate)
 
 # Deletes the Users account
 # We secretly keep all the data and sell them to China. Of course.
-def delete_account(appUser):
-    pass
+# TODO: Needs some sort of confirmation before deleting it
+def delete_user_account(aID):
+    file = "saved_classes/user.json"
+    cate = "users"
+
+    Tools.delete_entry_from_file(file, aID, cate)
 
 # Edits the Users account
-def edit_account(appUser):
-    pass
+# TODO: This works for now, but always requires the full info to be added. Better to not require everything each time
+def edit_user_account(ID, aAcN, aFiN, aLaN, aBiD, aEma, aPas) -> None:
+    file = "saved_classes/user.json"
+    inst = {"aAcN": aAcN, "aFiN": aFiN, "aLaN": aLaN, "aBiD": aBiD, "aEma": aEma, "aPas": aPas}
+    cate = "users"
+
+    Tools.edit_entry_from_file(file, ID, inst, cate)
 
 # Lets the User log into their account
 # To log in the user needs to provide their credentials (account name/email address + password)
-def login_account(appUser):
-    pass
+def login_account(aAcN, aPas):
+    global loggedIn
+
+    file = "saved_classes/user.json"
+
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data["users"]:
+        if entry.get("aAcN") == aAcN and entry.get("aPas") == aPas:
+            loggedIn = True
+            print("Login successful")
+        else:
+            print("Error: Password or Username don't match")
+
 
 # Logs the User out
 # After logging out returns to the main menu of the app
-def logout_account(appUser):
-    pass
+def logout_account():
+    global loggedIn
+
+    if loggedIn == True:
+        loggedIn = False
+        print("You successfully logged out")
+    else:
+        print("huh?")
 
 # Prints out the complete movie program
 # Takes the list from the MovieProgram class and returns it

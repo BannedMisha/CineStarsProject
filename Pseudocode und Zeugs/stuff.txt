@@ -10,3 +10,5 @@ Notes:
     > Seats are American system
 
 > Prices and stuff for the popcorn and drinks?
+
+> Getter/Setter methods not really needed?
