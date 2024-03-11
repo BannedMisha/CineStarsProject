@@ -1,19 +1,15 @@
-#:import Factory kivy.factory.Factory
 
-<MyPopup@Popup>
-    auto_dismiss: False
-    size_hint: 0.3, 0.2
-    pos_hint: {"x":0.4, "top":0.5}
-    title:"Changes have been saved!"
-    Button:
-        text: "OK"
-        font_site:20
-        on_release: root.dismiss()
+<CreateAccountScreen>:
+    name: "third"
 
+    aID: id_person
+    aAcN: person
+    aFiN: Firstname
+    aLaN: Lastname
+    aBiD: bday
+    aEma: email
+    aPas: pas1
 
-<MyAccount>:
-    name: "fifth"
-    aID : pers_info
     MDCard:
         size_hint:None, None
         size: 350, 500
@@ -36,19 +32,18 @@
 
 
                 MDLabel:
-                    id: pers_info
-                    text: "Check and modify your account information"
+                    id: create_account
+                    text: "Create an account"
                     font_size: 20
                     halign: 'center'
                     size_hint_y: None
                     height: self.texture_size[1]
                     padding: 25
 
-
                 MDTextField:
                     mode: "round"
-                    id: user_id
-                    hint_text: "this will show the id"
+                    id: id_person
+                    hint_text: "Acc ID"
                     icon_right:"account"
                     size_hint_x: None
                     width:200
@@ -57,8 +52,8 @@
 
                 MDTextField:
                     mode: "round"
-                    id: f_name
-                    hint_text: "this will show firstname"
+                    id: person
+                    hint_text: "Username"
                     icon_right:"account"
                     size_hint_x: None
                     width:200
@@ -67,9 +62,20 @@
 
                 MDTextField:
                     mode: "round"
-                    id: l_name
-                    hint_text: "this will show the last name"
-                    icon_right:"account"
+                    id: Firstname
+                    hint_text: "First name"
+                    icon_right:"rename"
+                    size_hint_x: None
+                    width:200
+                    font_size: 18
+                    pos_hint:{"center_x": 0.5}
+
+
+                MDTextField:
+                    mode: "round"
+                    id: Lastname
+                    hint_text: "Last name"
+                    icon_right:"rename"
                     size_hint_x: None
                     width:200
                     font_size: 18
@@ -77,9 +83,9 @@
 
                 MDTextField:
                     mode: "round"
-                    id: b_day
-                    hint_text: "this will show the birthday"
-                    icon_right:"account"
+                    id: bday
+                    hint_text: "Birth-date"
+                    icon_right:"calendar-range"
                     size_hint_x: None
                     width:200
                     font_size: 18
@@ -87,49 +93,50 @@
 
                 MDTextField:
                     mode: "round"
-                    id: eml
-                    hint_text: "this will show the email"
-                    icon_right:"account"
+                    id: email
+                    hint_text: "E-mail adress"
+                    icon_right:"email"
                     size_hint_x: None
                     width:200
                     font_size: 18
                     pos_hint:{"center_x": 0.5}
+
+
                 MDTextField:
                     mode: "round"
-                    id: pass
-                    hint_text: "this will show the password"
-                    icon_right:"account"
+                    id: pas1
+                    hint_text: "Chose your password"
+                    icon_right:"eye-off"
                     size_hint_x: None
                     width:200
                     font_size: 18
                     pos_hint:{"center_x": 0.5}
+                    password: True
+
 
 
                 MDRoundFlatButton:
-                    text: "Save"
+                    text: "SUBMIT"
                     font_size:12
                     pos_hint: {"center_x": 0.5}
-                    on_release:Factory.MyPopup().open()
                     on_press:
-                        app.root.current = "fourth"
+                        root.submit()
                         root.manager.transition.direction = "up"
 
+
                 MDRoundFlatButton:
-                    text: "Go back to menu"
-                    font_size:12
+                    text: "CLEAR"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press: root.clear()
+
+                MDRoundFlatButton:
+                    text: "GO BACK"
+                    font_size: 12
                     pos_hint: {"center_x": 0.5}
                     on_press:
-                        app.root.current = "fourth"
+                        app.root.current = "first"
                         root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
-                    text: "DELETE ACCOUNT"
-                    font_size:12
-                    pos_hint: { "center_x": 0.5 }
-                    on_press:
-                        app.root.current = "tenth"
-                        root.manager.transition.direction = "down"
-
-
-
-
+                Image:
+                    source: 'C:/Users/Mara/Desktop/logo.png'
