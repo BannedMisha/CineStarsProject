@@ -1,5 +1,9 @@
 <LogInScreen>:
     name: "second"
+
+    aAcN: user
+    aPas: password
+
     MDCard:
         size_hint:None, None
         size: 350, 500
@@ -44,6 +48,7 @@
             font_size:12
             pos_hint: {"center_x": 0.5}
             on_press:
+                root.login_account()
                 app.root.current = "fourth"
                 root.manager.transition.direction = "up"
 
@@ -51,7 +56,7 @@
             text: "CLEAR"
             font_size: 12
             pos_hint: {"center_x": 0.5}
-            on_press: app.clear()
+            on_press: root.clear()
 
         MDRoundFlatButton:
             text: "GO BACK"
@@ -61,4 +66,5 @@
                 app.root.current = "first"
                 root.manager.transition.direction = "down"
 
-
+        Image:
+            source: 'C:/Users/Mara/Desktop/logo.png'
