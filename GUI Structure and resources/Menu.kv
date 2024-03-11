@@ -82,6 +82,7 @@
                     font_size: 12
                     pos_hint: {"center_x": 0.5}
                     on_press:
+                        root.logout_account()
                         app.root.current = "first"
                         root.manager.transition.direction = "down"
 
