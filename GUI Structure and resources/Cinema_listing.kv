@@ -1,50 +1,442 @@
+
 <ListingsScreen>:
     name: "sixth"
     MDCard:
-        size_hint:None, None
+        size_hint: None, None
         size: 350, 500
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
-        elevation:10
+        elevation: 10
         padding:25
         spacing:25
         orientation:'vertical'
 
         ScrollView:
-            do_scroll_x:False
-            do_scroll_y:True
+            do_scroll_x: False
+            do_scroll_y: True
 
             GridLayout:
-                cols:1
+                cols: 2
                 spacing: 10
                 size_hint_y: None
-                height:self.minimum_height
+                height: self.minimum_height
                 anchor_x: 'center'
 
 
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/armageddon.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    padding: 10
+                    #ovelap: False
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .3, "center_x": 0.8 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .3, "center_x": 0.8 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
                 MDLabel:
-                    id: pers_info
-                    text: "Check out our movie selection"
-                    font_size: 20
-                    halign: 'center'
-                    size_hint_y: None
-                    height: self.texture_size[1]
-                    padding: 25
+                    text: "Title:Armageddon \nGenre:Action\nDuration: 89\nAge Rating:16\nStar Rating:4.2  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
 
-                MDRoundFlatButton:
-                    size_hint_x: .5
-                    text: "Now showing"
-                    font_size: 12
-                    pos_hint: {"center_x": 0.5}
-                    on_press:
-                        app.root.current = "first"
-                        root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
-                    size_hint_x: .5
-                    text: "Search"
-                    font_size: 12
-                    pos_hint: {"center_x": 0.5}
-                    on_press:
-                        app.root.current = "first"
-                        root.manager.transition.direction = "down"
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/forest.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:Forest Gump \nGenre:Drama\nDuration: 124\nAge Rating:12\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/james.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:James Bond \nGenre:Action\nDuration: 117\nAge Rating:12\nStar Rating:3.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/godfather1.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:The Godfather \nGenre:Crime\nDuration: 175\nAge Rating:18\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/godfather2.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:The Godfather II\nGenre:Crime\nDuration: 200\nAge Rating:18\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/lotr1.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:The Lord of the Rings: The Fellowship of the Ring\nGenre:Fantasy\nDuration: 201\nAge Rating:13\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/pulp.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:Pulp Fiction\nGenre:Crime\nDuration: 154\nAge Rating:18\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/redemption.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Title:The Shawshank Redemption\nGenre:Drama\nDuration: 142\nAge Rating:16\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/knight.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "The Dark Knight\nGenre:Action\nDuration: 152\nAge Rating:14\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/12men.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "12 Angry Men\nGenre:Drama\nDuration: 96\nAge Rating:16\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/schindler.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Schindler's List\nGenre:Drama\nDuration: 195\nAge Rating:17\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/good.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "The Good, the Bad and the Ugly\nGenre:Western\nDuration: 161\nAge Rating:18\nStar Rating:4.4  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/fight.jpeg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Fight Club\nGenre:Drama\nDuration: 139\nAge Rating:18\nStar Rating:4.3  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: 'C:/Users/Mara/Desktop/cinestars GUI/inception.jpg'
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+
+                    MDIconButton:
+                        icon: "cash-multiple"
+                        theme_icon_color: "Custom"
+                        icon_color: 0, 0.5, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: self.icon = "cash-multiple" if self.icon == "cash-check" else "cash-check"
+
+                MDLabel:
+                    text: "Inception\nGenre:Sci-Fi\nDuration: 148\nAge Rating:16\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+
+
+
+
+
+
+
+
+
 
