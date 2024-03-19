@@ -13,6 +13,8 @@
         spacing:25
         orientation:'vertical'
 
+
+
         MDLabel:
             id: welcome_login
             text: "Let's get started!"
@@ -43,28 +45,34 @@
             pos_hint:{"center_x": 0.5}
             password: True
 
-        MDRoundFlatButton:
-            text: "SUBMIT"
-            font_size:12
-            pos_hint: {"center_x": 0.5}
-            on_press:
-                root.login_account()
-                app.root.current = "fourth"
-                root.manager.transition.direction = "up"
+        BoxLayout:
+            orientation: "horizontal"
+            spacing: 10
+            padding: 35
 
-        MDRoundFlatButton:
-            text: "CLEAR"
-            font_size: 12
-            pos_hint: {"center_x": 0.5}
-            on_press: root.clear()
 
-        MDRoundFlatButton:
-            text: "GO BACK"
-            font_size: 12
-            pos_hint: {"center_x": 0.5}
-            on_press:
-                app.root.current = "first"
-                root.manager.transition.direction = "down"
+
+            MDFillRoundFlatButton:
+                text: "SUBMIT"
+                font_size:12
+                on_press:
+                    root.submit()
+                  #app.root.current = "fourth"
+                    root.manager.transition.direction = "up"
+
+            MDFillRoundFlatButton:
+                text: "CLEAR"
+                font_size: 12
+                on_press: root.clear()
+
+            MDFillRoundFlatButton:
+                text: "GO BACK"
+                font_size: 12
+                on_press:
+                    app.root.current = "first"
+                    root.manager.transition.direction = "down"
+
+
 
         Image:
             source: 'C:/Users/Mara/Desktop/logo.png'
