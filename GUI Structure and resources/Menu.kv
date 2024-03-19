@@ -28,9 +28,10 @@
                     halign: 'center'
                     size_hint_y: None
                     height: self.texture_size[1]
-                    padding: 25
+                    padding: 10
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "movie-roll"
                     size_hint_x: .5
                     text: "Cinema listings"
                     font_size: 12
@@ -39,7 +40,8 @@
                         app.root.current = "sixth"
                         root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "food-fork-drink"
                     size_hint_x: .5
                     text: "Food and Drinks"
                     font_size: 12
@@ -48,7 +50,8 @@
                         app.root.current = "seventh"
                         root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "heart"
                     size_hint_x: .5
                     text: "Wishlist"
                     font_size: 12
@@ -57,7 +60,8 @@
                         app.root.current = "eighth"
                         root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "account-details"
                     size_hint_x: .5
                     text: "My Account"
                     font_size: 12
@@ -66,7 +70,8 @@
                         app.root.current = "fifth"
                         root.manager.transition.direction = "up"
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "history"
                     size_hint_x: .5
                     text: "My orders"
                     font_size: 12
@@ -76,7 +81,8 @@
                         root.manager.transition.direction = "down"
 
 
-                MDRoundFlatButton:
+                MDRectangleFlatIconButton:
+                    icon: "account-off"
                     size_hint_x: .5
                     text: "Log out"
                     font_size: 12
@@ -85,6 +91,11 @@
                         root.logout_account()
                         app.root.current = "first"
                         root.manager.transition.direction = "down"
+
+        Image:
+            source: 'C:/Users/Mara/Desktop/logo.png'
+            size_hint: (0.3, 0.3)
+            pos_hint: { "center_x": 0.5 }
 
 
 
