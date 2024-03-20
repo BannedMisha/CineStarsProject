@@ -1,0 +1,52 @@
+von datetime, datetime importieren
+re importieren
+
+Funktion check_date_input():
+    muster = '%d.%m.%Y'  # Nur DD.MM.YYYY akzeptieren!!! https://stackoverflow.com/questions/69906987/how-to-limit-the-input-in-python-for-only-dates
+    date = None
+
+    Solange date is None:
+        eingabe = eingabe('Please enter a date (DD.MM.YYYY): ')
+
+        try:
+            date = datetime.strptime(eingabe, muster)
+        außer ValueError:
+            Ausgabe(f'"{eingabe}" is not a valid date. Please use the format DD.MM.YYYY.')
+            fortsetzen
+
+    Ausgabe(f'You entered a valid date: {date.strftime("%d.%m.%Y")}')
+    valid_date = date.strftime('%d.%m.%Y')
+    Ausgabe valid_date
+
+# Methode zum Überprüfen der E-Mail-Adresse 1: https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/
+
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+Funktion email_checker():
+    # Überprüfen, ob die E-Mail der Regex-Muster entspricht
+    email_correct = False
+    Solange nicht email_correct:
+        email = Eingabe('Please enter a valid e-mail address: ')
+        wenn re.fullmatch(regex, email):
+            email_correct = True
+            Ausgabe email
+        sonst:
+            Ausgabe("Invalid e-email address.")
+
+Funktion repeat_password_check():
+    Solange True:
+        passwort1 = Eingabe("Please choose your password: ")
+        passwort2 = Eingabe("Confirm your password: ")
+
+        wenn passwort1 == passwort2:
+            Ausgabe("Passwords match.")
+            Ausgabe passwort1
+        sonst:
+            Ausgabe("Passwords do not match. Please try again.")
+
+# Funktion zum Identifizieren des tatsächlichen Passworts nach Eingabe des Benutzernamens
+# benötigt für die Anmeldung
+Funktion search_the_password(json_datei, gesuchte_id):
+    für x in json_datei.get('users', []):
+        wenn x.get("aAccountName") == gesuchte_id:
+            Ausgabe x.get("aPassword")

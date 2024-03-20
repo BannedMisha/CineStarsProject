@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "aID": "U0001",
+            "tickets": [
+                {
+                    "ticketID": "T0001",
+                    "movieID": "M0001",
+                    "movie": "Armageddon",
+                    "price": 9.99
+                },
+                {
+                    "ticketID": "T0002",
+                    "movieID": "M0002",
+                    "movie": "Forest Gump",
+                    "price": 9.99
+                }
+            ]
+        },
+        {
+            "aID": "U0002",
+            "tickets": [
+                {
+                    "ticketID": "T0003",
+                    "movieID": "M0003",
+                    "movie": "Another Movie",
+                    "price": 9.99
+                }
+            ]
+        }
+    ]
+}

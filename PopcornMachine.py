@@ -10,39 +10,6 @@
 
 import Tools
 
-class PopcornMachine:
-
-    aID        = ""
-    aPopMenu   = []
-    aDrinkMenu = []
-
-    def __init__(self, aID, aPoM, aDrM):
-        self.aID        = aID
-        self.aPopMenu   = aPoM
-        self.aDrinkMenu = aDrM
-
-    # Getter/Setter Methods
-    def set_pop_menu(self):
-        pass
-
-    def set_drink_menu(self):
-        pass
-
-    def get_pop_menu(self):
-        pass
-
-    def get_drink_menu(self):
-        pass
-
-    # Pops popcorn and dispenses it to hungry user
-    def make_popcorn(self):
-        pass
-
-    # Fills up a cup of a choice beverage and dispenses it to the user
-    def make_drink(self):
-        pass
-
-
 
 # This function creates the popcorn menu
 # The list is populated by the names (aNam) from all entries of pop_popcorn.json
@@ -56,6 +23,15 @@ def create_popcorn_menu():
 def create_drink_menu():
     driList = Tools.read_multiple_from_file("saved_classes/pop_drink.json", "drinks", "aNam")
     return driList
+
+
+
+"""
+    FOR ARLIND:
+    Add more stuff below this point here. Make it cool. Add whatever functionality could work for a Popcorn Machine.
+    Real functional code, not pseudocode.
+"""
+
 
 # This function makes the popcorn
 # Popcorn is being magically created
