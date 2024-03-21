@@ -121,6 +121,15 @@ def create_pop_drink(aID, aNam, aSiz, aFla, aAdS) -> None:
 
     Tools.add_entry_to_file(file, inst, cate)
 
+def delete_pop_drink():
+    pass
+
+def edit_pop_drink_all():
+    pass
+
+def edit_pop_drink_one():
+    pass
+
 
 # =============================== POPCORN ===============================
 def create_pop_popcorn(aID, aNam, aSiz, aFla) -> None:
@@ -130,6 +139,15 @@ def create_pop_popcorn(aID, aNam, aSiz, aFla) -> None:
 
     Tools.add_entry_to_file(file, inst, cate)
 
+def delete_pop_popcorn():
+    pass
+
+def edit_pop_popcorn_all():
+    pass
+
+def edit_pop_popcorn_one():
+    pass
+
 
 # =============================== THEATER ===============================
 def create_theater(aID, aNam, aMax, aPCW, aPNW) -> None:
@@ -138,3 +156,12 @@ def create_theater(aID, aNam, aMax, aPCW, aPNW) -> None:
     cate = "theaters"
 
     Tools.add_entry_to_file(file, inst, cate)
+
+def delete_theater():
+    pass
+
+def edit_theater_all():
+    pass
+
+def edit_theater_one():
+    pass
