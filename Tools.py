@@ -16,7 +16,8 @@ import json
     > Read multiple contents from a file as a list
     > Read multiple contents from a file as a dictionary
     > Delete an entry from a file
-    > Edit an entry from a file
+    > Edit the whole entry of a file
+    > Edit one item of a entry of a file
 
 ========================================================================================================================
 """
@@ -36,7 +37,7 @@ def add_entry_to_file(file, instance, category) -> None:
             json.dump(data, wFile, indent=4)
 
 
-# Function to return contents from a JSON file
+# Function to return the value of a specific entry of a JSON file
 # file     : the name of the file (E.g. "saved_classes/movie_program.json")
 # category : the category (E.g. "moviePrograms")
 # ID       : the ID of the specific class instance we want the content from (E.g. "MP0002")
@@ -67,9 +68,10 @@ def read_multiple_from_file(file, category, item) -> list:
 
     return contentList
 
+
 # Returns all keys and values from an entry
 # file     : the name of the file (E.g. "saved_classes/movie_program.json")
-# category : the category (E.g. "moviePrograms") TODO: Automate this
+# category : the category (E.g. "moviePrograms")
 # ID       : the ID of the specific class instance we want the content from (E.g. "MP0002")
 def read_full_from_file(file, category, ID) -> dict:
     with open(file) as jFile:
@@ -83,9 +85,13 @@ def read_full_from_file(file, category, ID) -> dict:
 
     return contentDict
 
-# With this function you can delete an entry from a json file
+
+# With this function you can delete an entry from a JSON file
 # This will not completely delete it, aIDs will remain unique and one-use only, but it will scrub the information
-def delete_entry_from_file(file, ID, category) -> None:
+# file     : the name of the file (E.g. "saved_classes/movie_program.json")
+# category : the category (E.g. "moviePrograms")
+# ID       : the ID of the specific class instance we want the content from (E.g. "MP0002")
+def delete_entry_from_file(file, category, ID) -> None:
     with open(file) as jFile:
         data = json.load(jFile)
 
@@ -99,8 +105,12 @@ def delete_entry_from_file(file, ID, category) -> None:
         json.dump(data, wFile, indent=4)
 
 
-# THIS IS A COMMENT
-def edit_entry_from_file(file, ID, instance, category) -> None:
+# With this function you can edit the whole entry from a JSON file
+# file     : the name of the file (E.g. "saved_classes/movie_program.json")
+# instance : The contents of the things we edit (see AdminApp.create_movie() as example)
+# category : the category (E.g. "moviePrograms")
+# ID       : the ID of the specific class instance we want the content from (E.g. "MP0002")
+def edit_entry_from_file(file, instance, category, ID) -> None:
     with open(file) as jFile:
         data = json.load(jFile)
 
@@ -113,6 +123,25 @@ def edit_entry_from_file(file, ID, instance, category) -> None:
     with open(file, 'w') as wFile:
         json.dump(data, wFile, indent=4)
 
+# With this function you can edit a specific item of an entry in a JSON file
+# file     : the name of the file (E.g. "saved_classes/movie_program.json")
+# category : the category (E.g. "moviePrograms")
+# ID       : the ID of the specific class instance we want the content from (E.g. "MP0002")
+# item     : the item we are editing (E.g. "aMoL")
+# change   : the value that entry is changed to
+def edit_item_from_file(file, category, ID, item, change) -> None:
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for content in data.get(category):
+        if content['aID'] == ID:
+            if type(change) == type(content[item]):
+                content[item] = change
+            else:
+                print("Error: Mismatched data type. File has not been edited.")
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
 
 """
 ========================================================================================================================
@@ -185,7 +214,7 @@ def id_generator(file, ident) -> str:
 ========================================================================================================================
 
     This block contains major functionality for the functions in AdminApp.py
-    > Adds the right amount of movie seats to their respective movies of a movie program
+    > Alters the JSON file for the movie program, also adds the correct number of open seats to each movie
 
 ========================================================================================================================
 """
@@ -193,9 +222,10 @@ def id_generator(file, ident) -> str:
 # This function populates a movie program with their seats
 # Takes the max Capacity, theater ID and program (True Curr week, False next week) of a theater as input
 # Then it saves it to theater_seats.json, names are converted to IDs
-def populate_movie_seats(maxCap, idTheater, thisWeek):
+def populate_movie_seats(idTheater, thisWeek):
     movieList = show_movie_list(idTheater, thisWeek)
     program = {}
+    maxCap = read_from_file("saved_classes/theater.json", "theaters", idTheater, "aMax")
 
     movieListID = list(map(lambda x: convert_name_to_id("saved_classes/movie.json","movies",x)
                            , movieList))

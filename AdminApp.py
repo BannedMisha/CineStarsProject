@@ -6,21 +6,28 @@
 
 import PopcornMachine
 import Tools
+import json
 
 """
 ========================================================================================================================
 
     This block contains general functions the owner could use to run their cinema
-    > Advance movie program to next week (NYI)
+    > Advance movie program to next week
 
 ========================================================================================================================
 """
 
 # This function copies next week's movie program to this week
 # Then populates the movie program for next week
-def movie_program_advance_week() -> None:
-    pass
+def movie_program_advance_week(idTheater) -> None:
+    # Copy next week's content into this week
+    with open("saved_classes/theater_seats_next.json", 'r') as jFile:
+        data = json.load(jFile)
 
+    with open("saved_classes/theater_seats_current.json", 'w') as f:
+        json.dump(data, f, indent=4)
+
+    Tools.populate_movie_seats(idTheater,False)
 
 
 """
@@ -37,8 +44,12 @@ def movie_program_advance_week() -> None:
     These functions take all the needed attributes as input, then create entries using the add_entry_to_file()
     functions that can be found in Tools.py
     
+    If things aren't clear, check the respective functions inside Tools.py
+    
 ========================================================================================================================
 """
+
+# ================================ MOVIE ================================
 def create_movie(aID, aNam, aLen, aGen, aPri, aReD, aAgR, aStR, a2D, a3D, aDes) -> None:
     file = "saved_classes/movie.json"
     inst = {"aID":aID,   "aNam":aNam, "aLen":aLen, "aGen":aGen, "aPri":aPri,
@@ -47,6 +58,28 @@ def create_movie(aID, aNam, aLen, aGen, aPri, aReD, aAgR, aStR, a2D, a3D, aDes) 
 
     Tools.add_entry_to_file(file, inst, cate)
 
+def delete_movie(ID) -> None:
+    file = "saved_classes/movie.json"
+    cate = "movies"
+
+    Tools.delete_entry_from_file(file, cate, ID)
+
+def edit_movie_all(ID, aNam, aLen, aGen, aPri, aReD, aAgR, aStR, a2D, a3D, aDes) -> None:
+    file = "saved_classes/movie.json"
+    inst = {"aID": ID, "aNam": aNam, "aLen": aLen, "aGen": aGen, "aPri": aPri,
+            "aReD": aReD, "aAgR": aAgR, "aStR": aStR, "a2D": a2D, "a3D": a3D, "aDes": aDes}
+    cate = "movies"
+
+    Tools.edit_entry_from_file(file, inst, cate, ID)
+
+def edit_movie_one(ID, item, change) -> None:
+    file = "saved_classes/movie.json"
+    cate = "movies"
+
+    Tools.edit_item_from_file(file, cate, ID, item, change)
+
+
+# =========================== POPCORN MACHINE ===========================
 def create_popcorn_machine(aID) -> None:
     aPoM = PopcornMachine.create_popcorn_menu()
     aDrM = PopcornMachine.create_drink_menu()
@@ -57,6 +90,30 @@ def create_popcorn_machine(aID) -> None:
 
     Tools.add_entry_to_file(file, inst, cate)
 
+def delete_popcorn_machine(ID) -> None:
+    file = "saved_classes/popcorn_machine.json"
+    cate = "popcornMachines"
+
+    Tools.delete_entry_from_file(file, cate, ID)
+
+def edit_popcorn_machine_all(ID) -> None:
+    aPoM = PopcornMachine.create_popcorn_menu()
+    aDrM = PopcornMachine.create_drink_menu()
+
+    file = "saved_classes/popcorn_machine.json"
+    inst = {"aID": ID, "aPoM": aPoM, "aDrM": aDrM}
+    cate = "popcornMachines"
+
+    Tools.edit_entry_from_file(file, inst, cate, ID)
+
+def edit_popcorn_machine_one(ID, item, change):
+    file = "saved_classes/popcorn_machine.json"
+    cate = "popcornMachines"
+
+    Tools.edit_item_from_file(file, cate, ID, item, change)
+
+
+# ================================ DRINKS ===============================
 def create_pop_drink(aID, aNam, aSiz, aFla, aAdS) -> None:
     file = "saved_classes/pop_drink.json"
     inst = {"aID":aID, "aNam": aNam, "aSiz":aSiz, "aFla":aFla, "aAdS":aAdS}
@@ -64,6 +121,8 @@ def create_pop_drink(aID, aNam, aSiz, aFla, aAdS) -> None:
 
     Tools.add_entry_to_file(file, inst, cate)
 
+
+# =============================== POPCORN ===============================
 def create_pop_popcorn(aID, aNam, aSiz, aFla) -> None:
     file = "saved_classes/pop_popcorn.json"
     inst = {"aID":aID, "aNam":aNam, "aSiz":aSiz, "aFla":aFla}
@@ -71,6 +130,8 @@ def create_pop_popcorn(aID, aNam, aSiz, aFla) -> None:
 
     Tools.add_entry_to_file(file, inst, cate)
 
+
+# =============================== THEATER ===============================
 def create_theater(aID, aNam, aMax, aPCW, aPNW) -> None:
     file = "saved_classes/theater.json"
     inst = {"aID":aID, "aNam":aNam, "aMax":aMax, "aPCW":aPCW, "aPNW":aPNW}

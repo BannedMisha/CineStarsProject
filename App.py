@@ -144,7 +144,7 @@ def delete_user_account(aID):
     file = "saved_classes/user.json"
     cate = "users"
 
-    Tools.delete_entry_from_file(file, aID, cate)
+    Tools.delete_entry_from_file(file, cate, aID)
 
 # Function to edit the user's account
 # Needs inputs for all the Users attributes, otherwise they will be overwritten with "nothing"
@@ -154,7 +154,7 @@ def edit_user_account(ID, aNam, aFiN, aLaN, aBiD, aEma, aPas) -> None:
     inst = {"aNam": aNam, "aFiN": aFiN, "aLaN": aLaN, "aBiD": aBiD, "aEma": aEma, "aPas": aPas}
     cate = "users"
 
-    Tools.edit_entry_from_file(file, ID, inst, cate)
+    Tools.edit_entry_from_file(file, inst, cate, ID)
 
 # Function to let the user log into their account
 # To log in the user needs to provide their credentials (account name/email address + password)
