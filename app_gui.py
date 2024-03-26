@@ -1,6 +1,5 @@
 import json
 import Tools
-import PopcornMachine
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.uix.image import Image
@@ -8,7 +7,8 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.widget import Widget
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
-
+from kivy.uix.boxlayout import BoxLayout
+from kivy.properties import StringProperty
 
 # Global variables to track login status
 loggedIn = False
@@ -30,7 +30,7 @@ class LogInScreen(Screen):
         global loggedIn
         global logged_user
 
-        file = "user.json"
+        file = "saved_classes/user.json"
 
         with open(file) as jFile:
             data = json.load(jFile)
@@ -93,7 +93,7 @@ class CreateAccountScreen(Screen):
         aEma = self.ids.email.text
         aPas = self.ids.pas1.text
 
-        file = "user.json"
+        file = "saved_classes/user.json"
         inst = {"aID": aID, "aAcN": aAcN, "aFiN": aFiN, "aLaN": aLaN, "aBiD": aBiD, "aEma": aEma, "aPas": aPas}
         cate = "users"
         logged_user = aAcN
@@ -171,13 +171,13 @@ class MyAccount(Screen):
 
     def change_hint_text(self):
         global logged_user
-        self.ids.user_id.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aID")
-        self.ids.user_user.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aAcN")
-        self.ids.f_name.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aFiN")
-        self.ids.l_name.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aLaN")
-        self.ids.b_day.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aBiD")
-        self.ids.eml.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aEma")
-        self.ids.passs.hint_text = Tools.read_from_file_mod("user.json", "users", logged_user, "aPas")
+        self.ids.user_id.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aID")
+        self.ids.user_user.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aAcN")
+        self.ids.f_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aFiN")
+        self.ids.l_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aLaN")
+        self.ids.b_day.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aBiD")
+        self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
+        self.ids.passs.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aPas")
 
     def edit_user_info(self):
         """
@@ -186,7 +186,7 @@ class MyAccount(Screen):
         unchanged.
         """
         global logged_user
-        file = "user.json"
+        file = "saved_classes/user.json"
 
         instance = {"aID": self.ids.user_id.text,
                     "aAcN": self.ids.user_user.text,
@@ -208,15 +208,22 @@ class FoodScreen(Screen):
     pass
 
 
-class WishlistScreen(Screen, Widget):
-    def spinner_week(self, value):
-        self.ids.label_week.text = f"You selected: {value}"
-
-    def spinner_day(self, value):
-        self.ids.label_day.text = f"You selected: {value}"
-
-    def spinner_movie(self, value):
-        self.ids.label_movie.text = f"You selected: {value}"
+class WishlistScreen(Screen):
+    # class MovieTile(BoxLayout):  # save the attributes as paths
+    #     image_source = StringProperty("")
+    #     title = StringProperty("")
+    #     genre = StringProperty("")
+    #     length = StringProperty("")
+    #     Rating = StringProperty("")
+    #
+    #     def __init__(self, movie_id, **kwargs):
+    #         super(MovieTile, self).__init__(**kwargs)
+    #         self.movie_id = movie_id
+    #         self.movie_title = Tools.read_from_file("movie.json", "movies", id, "aNam")
+    #         self.movie_genre = Tools.read_from_file("movie.json", "movies", id, "aGen")
+    #         self.movie_length = Tools.read_from_file("movie.json", "movies", id, "aLen")
+    #         self.movie_rating = Tools.read_from_file("movie.json", "movies", id, "aStr")
+    pass
 
 
 
@@ -234,7 +241,7 @@ class DeleteAccountScreen(Screen):
         global logged_user
 
         aAcN = self.ids.user_to_del.text
-        file = "user.json"  # note to self: THIS NEEDS TO BE RENAMED ACCORDINGLY !!!
+        file = "saved_classes/user.json"  # note to self: THIS NEEDS TO BE RENAMED ACCORDINGLY !!!
         cate = "users"
         if logged_user == aAcN:
             Tools.delete_entry_from_file_mod(file, aAcN, cate)
@@ -249,21 +256,54 @@ class DeleteAccountScreen(Screen):
             pop.open()
 
 
+class BuyTicket(Screen, Widget):
+    def spinner_week(self, value):
+        self.ids.label_week.text = f"You selected: {value}"
+
+    def spinner_day(self, value):
+        self.ids.label_day.text = f"You selected: {value}"
+
+    def spinner_movie(self, value):
+        self.ids.label_movie.text = f"You selected: {value}"
+
+
+
+
+    def buy_choice(self):
+        thisWeek =self.ids.spinner_week.text
+        day = self.ids.spinner_day.text
+        movieID = self.ids.spinner_movie.text
+
+        result = Tools.ticket_buyer(thisWeek,day,movieID)
+
+        if result is True:
+            pop = Popup(title='Congratulations!',
+                        content=Label(text='Your ticket has been purchased!'),
+                        size_hint=(None, None), size=(300, 100))
+            pop.open()
+        else:
+            pop = Popup(title='Oops!',
+                        content=Label(text='There was an error purchasing your ticket.'),
+                        size_hint=(None, None), size=(300, 100))
+            pop.open()
+
+
 class WindowManager(ScreenManager):
     pass
 
 
 # Loading all the kv files
-Builder.load_file("welcome.kv")
-Builder.load_file("logIn.kv")
-Builder.load_file("createAccount.kv")
-Builder.load_file("Menu.kv")
-Builder.load_file("changeAccount.kv")
-Builder.load_file("Cinema_listing.kv")
-Builder.load_file("food_menu.kv")
-Builder.load_file("wishlist.kv")
-Builder.load_file("my_orders.kv")
-Builder.load_file("delete_account.kv")
+Builder.load_file("GUI Structure and resources/welcome.kv")
+Builder.load_file("GUI Structure and resources/logIn.kv")
+Builder.load_file("GUI Structure and resources/createAccount.kv")
+Builder.load_file("GUI Structure and resources/Menu.kv")
+Builder.load_file("GUI Structure and resources/changeAccount.kv")
+Builder.load_file("GUI Structure and resources/Cinema_listing.kv")
+Builder.load_file("GUI Structure and resources/food_menu.kv")
+Builder.load_file("GUI Structure and resources/wishlist.kv")
+Builder.load_file("GUI Structure and resources/my_orders.kv")
+Builder.load_file("GUI Structure and resources/delete_account.kv")
+Builder.load_file("GUI Structure and resources/buy_ticket.kv")
 
 
 class MainApp(MDApp):
@@ -285,6 +325,7 @@ class MainApp(MDApp):
         screen_manager.add_widget(WishlistScreen(name="eighth"))
         screen_manager.add_widget(OrdersScreen(name="ninth"))
         screen_manager.add_widget(DeleteAccountScreen(name="tenth"))
+        screen_manager.add_widget(BuyTicket(name="eleven"))
         return screen_manager
 
 

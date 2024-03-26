@@ -157,3 +157,27 @@ def write_to_file(file, instance, category) -> None:
 
     with open(file, 'w') as wFile:
         json.dump(data, wFile, indent=4)
+
+
+def ticket_buyer(thisWeek, day, movieID) -> bool:
+    ticketBought = False
+
+    if thisWeek:
+        fileLocation = "saved_classes/theater_seats_current_re.json"
+    else:
+        fileLocation = "saved_classes/theater_seats_next_re.json"
+
+    with open(fileLocation, "r") as jFile:
+        movieProgram = json.load(jFile)
+
+    if day in movieProgram and movieID in movieProgram[day]:
+        if movieProgram[day][movieID] > 0:
+            movieProgram[day][movieID] -= 1
+            ticketBought = True
+        else:
+            print("Error: No more available seats")
+
+        with open(fileLocation, "w") as jFile:
+            json.dump(movieProgram,jFile, indent=4)
+
+    return ticketBought

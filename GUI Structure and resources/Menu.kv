@@ -92,8 +92,18 @@
                         app.root.current = "first"
                         root.manager.transition.direction = "down"
 
+                MDRectangleFlatIconButton:
+                    icon: "cash"
+                    size_hint_x: .5
+                    text: "Buy Ticket, this stays here for now"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "eleven"
+                        root.manager.transition.direction = "down"
+
         Image:
-            source: 'C:/Users/Mara/Desktop/logo.png'
+            source: "GUI Structure and resources/images/logo.png"
             size_hint: (0.3, 0.3)
             pos_hint: { "center_x": 0.5 }
 

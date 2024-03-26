@@ -23,27 +23,43 @@
 
                 MDLabel:
                     id: pers_info
-                    text: "Menu"
+                    text: "Snacks and Drinks"
                     font_size: 20
                     halign: 'center'
                     size_hint_y: None
                     height: self.texture_size[1]
                     padding: 25
 
-                MDRoundFlatButton:
+                MDFillRoundFlatButton:
                     size_hint_x: .5
                     text: "Snacks"
                     font_size: 12
                     pos_hint: {"center_x": 0.5}
                     on_press:
-                        app.root.current = "sixth"
+                        app.root.current = "fourth"
                         root.manager.transition.direction = "down"
 
-                MDRoundFlatButton:
+                MDFillRoundFlatButton:
                     size_hint_x: .5
                     text: "Drinks"
                     font_size: 12
                     pos_hint: {"center_x": 0.5}
                     on_press:
-                        app.root.current = "first"
+                        app.root.current = "fourth"
                         root.manager.transition.direction = "down"
+
+
+
+                MDFillRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Go back to Menu"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "down"
+        Image:
+            source: "GUI Structure and resources/images/wip2.png"
+            size_hint_x: 0.8
+            pos_hint: { "center_x": 0.5 }
+

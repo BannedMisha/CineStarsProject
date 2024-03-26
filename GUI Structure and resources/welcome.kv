@@ -9,7 +9,11 @@
         spacing:15
         orientation:'vertical'
 
-
+        FitImage:
+            source: "GUI Structure and resources/images/test.jpg"
+            size_hint_y: 3
+            pos_hint: { "top": .50 }
+            radius: 36, 36, 0, 0
 
         MDLabel:
             id: welcome_1
@@ -18,9 +22,9 @@
             halign: 'center'
             size_hint_y: None
             height: self.texture_size[1]
-            padding: 25
+            padding: 5
 
-        MDRoundFlatButton:
+        MDFillRoundFlatButton:
             text: "LOG IN"
             font_size: 12
             pos_hint: {"center_x": 0.5}
@@ -28,7 +32,7 @@
                 app.root.current = "second"
                 root.manager.transition.direction = "up"
 
-        MDRoundFlatButton:
+        MDFillRoundFlatButton:
             text: "CREATE AN ACCOUNT"
             font_size: 12
             pos_hint: {"center_x": 0.5}
@@ -36,9 +40,10 @@
                 app.root.current = "third"
                 root.manager.transition.direction = "up"
 
-        Widget:
-            size_hint_y: None
-            height: 150
 
+        Image:
+            source: "GUI Structure and resources/images/logo.png"
+            size_hint: (0.5, 0.5)
+            pos_hint: {"center_x": 0.5}
 
 
