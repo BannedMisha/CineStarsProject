@@ -1,0 +1,97 @@
+<BuyTicket>:
+    name: "eleven"
+    MDCard:
+        size_hint:None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation:10
+        padding:17
+        spacing:10
+        orientation:'vertical'
+
+        ScrollView:
+            do_scroll_x:False
+            do_scroll_y:True
+
+            GridLayout:
+                cols:1
+                spacing: 40
+                size_hint_y: None
+                height:self.minimum_height
+                anchor_x: 'center'
+
+
+
+                MDLabel:
+                    id: pers_info
+                    text: "Buy a ticket"
+                    font_size: 20
+                    halign: 'center'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 25
+
+
+                MDLabel:
+                    id: label_week
+                    text: "Selected Week: "
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+
+                Spinner:
+                    id: spinner_week
+                    text: "When"
+                    values: ["True", "False"]
+                    size: dp(100), dp(100)
+                    pos_hint: { 'center_x': .5, 'center_y': .5 }
+                    on_text: root.spinner_week(spinner_week.text)
+
+
+                MDLabel:
+                    id: label_day
+                    text: "Selected the day: "
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+
+                Spinner:
+                    id: spinner_day
+                    text: "When"
+                    values: [ "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN" ]
+                    size_hint_x: 1
+                    on_text: root.spinner_day(spinner_day.text)
+
+                MDLabel:
+                    id: label_movie
+                    text: "Selected the day: "
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+
+                Spinner:
+                    id: spinner_movie
+                    text: "Select the movie ID"
+                    values: [ "M0001", "M0002", "M0003", "M0004", "M0005", "M0006", "M0007", "M0008","M0009","M0010","M0011" ,"M0012","M0013" ,"M00014"  ]
+                    size_hint_x: 1
+                    on_text: root.spinner_movie(spinner_movie.text)
+
+
+                MDFillRoundFlatButton:
+                    text: "BUY"
+                    font_size:12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        root.buy_choice()
+
+                MDFillRoundFlatButton:
+                    text: "Go back to Menu"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "down"
+
+
+
+
