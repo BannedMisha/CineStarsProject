@@ -1,0 +1,55 @@
+<DeleteAccountScreen>:
+    name: "tenth"
+
+    aAcN: user_to_del
+
+
+    MDCard:
+        size_hint:None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation:10
+        padding:15
+        spacing:25
+        orientation:'vertical'
+
+        MDLabel:
+            id: sorry
+            text: "We're sorry to see you go!"
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding: 25
+
+        MDTextField:
+            mode: "round"
+            id: user_to_del
+            hint_text: "Enter your username"
+            icon_right:"account"
+            size_hint_x: None
+            width:200
+            font_size: 18
+            pos_hint:{"center_x": 0.5}
+
+
+        MDFillRoundFlatButton:
+            text: "SUBMIT"
+            font_size:12
+            pos_hint: {"center_x": 0.5}
+            on_press:
+                root.delete_user_account()
+                app.root.current = "first"
+                root.manager.transition.direction = "up"
+
+
+        MDFillRoundFlatButton:
+            text: "GO BACK"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "down"
+        Image:
+            source: 'CineStarsProject-pre_release/GUI Structure and resources/images/logo.png'
+

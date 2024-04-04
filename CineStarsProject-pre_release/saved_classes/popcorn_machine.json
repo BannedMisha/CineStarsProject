@@ -1,0 +1,20 @@
+{
+    "popcornMachines": [
+        {
+            "aID": "PM0001",
+            "aPoM": [
+                "Salty Popcorn S",
+                "Salty Popcorn M",
+                "Salty Popcorn L",
+                "Sweet Popcorn S",
+                "Sweet Popcorn M",
+                "Sweet Popcorn L"
+            ],
+            "aDrM": [
+                "Coke S",
+                "Coke M",
+                "Coke L"
+            ]
+        }
+    ]
+}

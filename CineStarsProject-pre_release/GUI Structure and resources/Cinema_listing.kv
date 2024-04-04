@@ -1,0 +1,409 @@
+
+<ListingsScreen>:
+    name: "sixth"
+    MDCard:
+        size_hint: None, None
+        size: 600, 800
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 2
+                spacing: 20
+                size_hint_y: None
+                height: self.minimum_height
+                anchor_x: 'center'
+
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0001
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/armageddon.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    padding: 10
+                    #ovelap: False
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .3, "center_x": 0.8 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Armageddon")
+
+                MDLabel:
+                    text: "Title:Armageddon \nGenre:Action\nDuration: 89\nAge Rating:16\nStar Rating:4.2  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0002
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/forest.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Forest Gump")
+
+                MDLabel:
+                    text: "Title:Forest Gump \nGenre:Drama\nDuration: 124\nAge Rating:12\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0003
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/james.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("James Bond")
+
+
+                MDLabel:
+                    text: "Title:James Bond \nGenre:Action\nDuration: 117\nAge Rating:12\nStar Rating:3.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0004
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/godfather1.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Godfather")
+
+
+                MDLabel:
+                    text: "Title:The Godfather \nGenre:Crime\nDuration: 175\nAge Rating:18\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0005
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/godfather2.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Godfather II")
+
+
+                MDLabel:
+                    text: "Title:The Godfather II\nGenre:Crime\nDuration: 200\nAge Rating:18\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0006
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/lotr1.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Lord of the Rings")
+
+
+                MDLabel:
+                    text: "Title:The Lord of the Rings: The Fellowship of the Ring\nGenre:Fantasy\nDuration: 201\nAge Rating:13\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0007
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/pulp.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Pulp Fiction")
+
+                MDLabel:
+                    text: "Title:Pulp Fiction\nGenre:Crime\nDuration: 154\nAge Rating:18\nStar Rating:4.6  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0008
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/redemption.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Shawshank Redemption")
+
+                MDLabel:
+                    text: "Title:The Shawshank Redemption\nGenre:Drama\nDuration: 142\nAge Rating:16\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    radius: 24
+                    id: M0009
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/knight.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Dark Knight")
+
+                MDLabel:
+                    text: "The Dark Knight\nGenre:Action\nDuration: 152\nAge Rating:14\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    id: M0010
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/12men.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("12 Angry Men")
+
+
+                MDLabel:
+                    text: "12 Angry Men\nGenre:Drama\nDuration: 96\nAge Rating:16\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    id: M0011
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/schindler.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Schindler's List")
+
+
+                MDLabel:
+                    text: "Schindler's List\nGenre:Drama\nDuration: 195\nAge Rating:17\nStar Rating:4.7  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    id: M0012
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/good.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("The Good, the Bad and the Ugly")
+
+                MDLabel:
+                    text: "The Good, the Bad and the Ugly\nGenre:Western\nDuration: 161\nAge Rating:18\nStar Rating:4.4  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    id: M0013
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/fight.jpeg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Fight Club")
+
+                MDLabel:
+                    text: "Fight Club\nGenre:Drama\nDuration: 139\nAge Rating:18\nStar Rating:4.3  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDSmartTile:
+                    id: M0014
+                    radius: 24
+                    box_radius: [ 0, 0, 24, 24 ]
+                    box_color: 1, 1, 1, .6
+                    source: "GUI Structure and resources/images/inception.jpg"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "140dp", "140dp"
+                    allow_stretch: False
+                    padding: 10
+
+                    MDIconButton:
+                        icon: "heart-outline"
+                        theme_icon_color: "Custom"
+                        icon_color: 1, 0, 0, 1
+                        pos_hint: { "center_y": .5 }
+                        on_release: 
+                            self.icon = "heart" if self.icon == "heart-outline" else "heart-outline"
+                            root.add_to_wishlist("Inception")
+
+                MDLabel:
+                    text: "Inception\nGenre:Sci-Fi\nDuration: 148\nAge Rating:16\nStar Rating:4.8  "
+                    pos_hint: { "top": 0.5, "center_x": .5 }
+
+                MDFillRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Buy a ticket"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "eleven"
+                        root.manager.transition.direction = "up"
+
+                MDFillRoundFlatButton:
+                    text: "Return to menu"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "down"
+
+
+
+
+
+
+
+
+
+
+

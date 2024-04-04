@@ -1,0 +1,49 @@
+<WelcomeScreen>:
+    name: "first"
+    MDCard:
+        size_hint:None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation:10
+        padding:15
+        spacing:15
+        orientation:'vertical'
+
+        FitImage:
+            source: "GUI Structure and resources/images/test.jpg"
+            size_hint_y: 3
+            pos_hint: { "top": .50 }
+            radius: 36, 36, 0, 0
+
+        MDLabel:
+            id: welcome_1
+            text: "Welcome to CineStars"
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding: 5
+
+        MDFillRoundFlatButton:
+            text: "LOG IN"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press:
+                app.root.current = "second"
+                root.manager.transition.direction = "up"
+
+        MDFillRoundFlatButton:
+            text: "CREATE AN ACCOUNT"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press:
+                app.root.current = "third"
+                root.manager.transition.direction = "up"
+
+
+        Image:
+            source: "GUI Structure and resources/images/logo.png"
+            size_hint: (1.5, 1.5)
+            pos_hint: {"center_x": 0.5}
+
+

@@ -1,0 +1,50 @@
+<WishlistScreen>:
+    name: "eighth"
+    wishlist_label: wishlist_label
+
+    MDCard:
+        size_hint: None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                id: wishlist_grid
+                cols: 1
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+                anchor_x: 'center'
+
+                MDLabel:
+                    text: "Your Wishlist"
+                    font_size: 20
+                    halign: 'center'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 25
+
+                MDLabel:
+                    id: wishlist_label
+                    text: ""
+                    font_size: 16
+                    halign: 'left'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 10
+
+                MDFillRoundFlatButton:
+                    size_hint_x: .5
+                    text: "Go back to Menu"
+                    font_size: 12
+                    pos_hint: {"center_x": 0.5}
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "down"

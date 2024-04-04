@@ -1,0 +1,22 @@
+{
+    "moviePrograms": [
+        {
+            "aID": "MP0001",
+            "aCin": "C0001",
+            "aMoL": [
+                "M0001",
+                "M0002",
+                "M0003"
+            ]
+        },
+        {
+            "aID": "MP0002",
+            "aCin": "C0002",
+            "aMoL": [
+                "Peter Pan",
+                "Robin Hood",
+                "Jimmy McJimmerson"
+            ]
+        }
+    ]
+}

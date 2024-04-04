@@ -1,0 +1,59 @@
+<BuyTicket>:
+    name: "eleven"
+    MDCard:
+        size_hint: None, None
+        size: 350, 500
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 17
+        spacing: 10
+        orientation: 'vertical'
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                spacing: 40
+                size_hint_y: None
+                height: self.minimum_height
+                anchor_x: 'center'
+
+                MDLabel:
+                    id: pers_info
+                    text: "Buy a ticket"
+                    font_size: 20
+                    halign: 'center'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 15
+
+                MDLabel:
+                    id: label_movie
+                    text: "Selected Movie:"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                Spinner:
+                    id: spinner_movie
+                    text: "Select the movie"
+                    size_hint: None, None
+                    size: 200, 50
+                    values: ["Armageddon", "Forest Gump", "James Bond", "The Godfather", "The Godfather II", "The Lord of the Rings: The Fellowship of the Ring", "Pulp Fiction", "The Shawshank Redemption", "The Dark Knight", "12 Angry Men", "Schindler's List", "The Good, the Bad and the Ugly", "Fight Club", "Inception"]
+                    on_text: root.show_spinner_values(spinner_movie.text)
+
+                MDFillRoundFlatButton:
+                    text: "BUY"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        root.buy_choice()
+
+                MDFillRoundFlatButton:
+                    text: "Go back to Menu"
+                    font_size: 12
+                    pos_hint: { "center_x": 0.5 }
+                    on_press:
+                        app.root.current = "fourth"
+                        root.manager.transition.direction = "down"
