@@ -34,7 +34,7 @@ class LogInScreen(Screen):
         global loggedIn
         global logged_user
 
-        file = "CineStarsProject-pre_release/saved_classes/user.json"
+        file = "saved_classes/user.json"
 
         with open(file) as jFile:
             data = json.load(jFile)
@@ -97,7 +97,7 @@ class CreateAccountScreen(Screen):
         aEma = self.ids.email.text
         aPas = self.ids.pas1.text
 
-        file = "CineStarsProject-pre_release/saved_classes/user.json"
+        file = "saved_classes/user.json"
         inst = {"aAcN": aAcN, "aFiN": aFiN, "aLaN": aLaN, "aBiD": aBiD, "aEma": aEma, "aPas": aPas}
         cate = "users"
         logged_user = aAcN
@@ -174,13 +174,13 @@ class MyAccount(Screen):
 
     def change_hint_text(self):
         global logged_user
-        self.ids.user_id.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aID")
-        self.ids.user_user.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aAcN")
-        self.ids.f_name.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aFiN")
-        self.ids.l_name.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aLaN")
-        self.ids.b_day.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aBiD")
-        self.ids.eml.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aEma")
-        self.ids.passs.hint_text = Tools.read_from_file_mod("CineStarsProject-pre_release/saved_classes/user.json", "users", logged_user, "aPas")
+        self.ids.user_id.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aID")
+        self.ids.user_user.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aAcN")
+        self.ids.f_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aFiN")
+        self.ids.l_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aLaN")
+        self.ids.b_day.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aBiD")
+        self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
+        self.ids.passs.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aPas")
 
     def edit_user_info(self):
         """
@@ -189,7 +189,7 @@ class MyAccount(Screen):
         unchanged.
         """
         global logged_user
-        file = "CineStarsProject-pre_release/saved_classes/user.json"
+        file = "saved_classes/user.json"
 
         instance = {
                     "aAcN": self.ids.user_user.text,
@@ -249,7 +249,7 @@ class DeleteAccountScreen(Screen):
         global logged_user
 
         aAcN = self.ids.user_to_del.text
-        file = "CineStarsProject-pre_release/saved_classes/user.json"  # note to self: THIS NEEDS TO BE RENAMED ACCORDINGLY !!!
+        file = "saved_classes/user.json"  # note to self: THIS NEEDS TO BE RENAMED ACCORDINGLY !!!
         cate = "users"
         if logged_user == aAcN:
             Tools.delete_entry_from_file_mod(file, aAcN, cate)
