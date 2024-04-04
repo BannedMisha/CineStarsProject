@@ -14,7 +14,7 @@ from kivy.uix.spinner import SpinnerOption
 from datetime import datetime
 
 
-# Global variables to track login status
+# Global variables to track login statuss
 loggedIn = False
 logged_user = ""
 
