@@ -1,123 +1,6 @@
 {
     "users": [
         {
-            "aID": "U001",
-            "aAcN": "The Flayer",
-            "aFiN": "John B.",
-            "aLaN": "Slayin",
-            "aBiD": "1999",
-            "aEma": "ass@slayin.com",
-            "aPas": "poophead"
-        },
-        {
-            "aID": null,
-            "aAcN": "dfg",
-            "aFiN": null,
-            "aLaN": null,
-            "aBiD": null,
-            "aEma": null,
-            "aPas": null
-        },
-        {
-            "aID": "123",
-            "aAcN": "buddy",
-            "aFiN": "ef",
-            "aLaN": "fd",
-            "aBiD": "dfv",
-            "aEma": "wqf",
-            "aPas": "we"
-        },
-        {
-            "aID": null,
-            "aAcN": "reluc",
-            "aFiN": null,
-            "aLaN": null,
-            "aBiD": null,
-            "aEma": null,
-            "aPas": null
-        },
-        {
-            "aID": "123",
-            "aAcN": "totoro",
-            "aFiN": "qwewqerew",
-            "aLaN": "egerg",
-            "aBiD": "weewr",
-            "aEma": "qq",
-            "aPas": "werwe"
-        },
-        {
-            "aID": "1232134",
-            "aAcN": "BIANCA",
-            "aFiN": "asd",
-            "aLaN": "sad",
-            "aBiD": "AS",
-            "aEma": "DF",
-            "aPas": "qwerr"
-        },
-        {
-            "aID": "qwet",
-            "aAcN": "qwew",
-            "aFiN": "eqt",
-            "aLaN": "ewqtwe",
-            "aBiD": "t",
-            "aEma": "qwert",
-            "aPas": "qt"
-        },
-        {
-            "aID": null,
-            "aAcN": "test",
-            "aFiN": null,
-            "aLaN": null,
-            "aBiD": null,
-            "aEma": null,
-            "aPas": null
-        },
-        {
-            "aID": "asd",
-            "aAcN": "test1",
-            "aFiN": "sd",
-            "aLaN": "df",
-            "aBiD": "FF",
-            "aEma": "SDG",
-            "aPas": "TEST"
-        },
-        {
-            "aID": "dsfvds",
-            "aAcN": "asdg",
-            "aFiN": "asdga",
-            "aLaN": "sdga",
-            "aBiD": "sdga",
-            "aEma": "dsg",
-            "aPas": "adg"
-        },
-        {
-            "aID": "2q",
-            "aAcN": "1",
-            "aFiN": "f",
-            "aLaN": "ew",
-            "aBiD": "we",
-            "aEma": "dsfsdf",
-            "aPas": "2"
-        },
-        {
-            "aID": "user12",
-            "aAcN": "mara",
-            "aFiN": "mara",
-            "aLaN": "aitean",
-            "aBiD": "01.01.2001",
-            "aEma": "maruc@gmail.com",
-            "aPas": "1234"
-        },
-        {
-            "aID": null,
-            "aAcN": "test",
-            "aFiN": null,
-            "aLaN": null,
-            "aBiD": null,
-            "aEma": null,
-            "aPas": null
-        },
-        {
             "aID": "sad",
             "aAcN": "sdsd",
             "aFiN": "asdas",
@@ -125,6 +8,14 @@
             "aBiD": "asd",
             "aEma": "asd",
             "aPas": "asd"
+        },
+        {
+            "aAcN": "majd",
+            "aFiN": "majd",
+            "aLaN": "majd",
+            "aBiD": "2221512",
+            "aEma": "dsadwes",
+            "aPas": "1"
         }
     ]
 }
