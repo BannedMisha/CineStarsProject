@@ -1,65 +1,103 @@
 <FoodScreen>:
     name: "seventh"
     MDCard:
-        size_hint:None, None
-        size: 350, 500
+        size_hint: None, None
+        size: 400, 600
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
-        elevation:10
-        padding:25
-        spacing:25
-        orientation:'vertical'
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            id: pers_info
+            text: "Snacks and Drinks"
+            font_size: 20
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding: 25
+
+
 
         ScrollView:
-            do_scroll_x:False
-            do_scroll_y:True
+            do_scroll_x: False
+            do_scroll_y: True
 
             GridLayout:
-                cols:1
-                spacing: 10
+                cols: 2
+                spacing: 20
                 size_hint_y: None
-                height:self.minimum_height
+                height: self.minimum_height
                 anchor_x: 'center'
 
 
-                MDLabel:
-                    id: pers_info
-                    text: "Snacks and Drinks"
-                    font_size: 20
-                    halign: 'center'
-                    size_hint_y: None
-                    height: self.texture_size[1]
-                    padding: 25
+                Image:
+                    source: "GUI Structure and resources\images\popcorn.png"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    padding: 10
+
+                Image:
+                    source: "GUI Structure and resources\images\colaGlass.png"
+                    pos_hint: { "center_x": 0.5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    padding: 10
 
                 MDFillRoundFlatButton:
-                    size_hint_x: .5
-                    text: "Snacks"
+                    size_hint_x: .4
+                    text: "Popcorn"
                     font_size: 12
-                    pos_hint: {"center_x": 0.5}
+                    pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
-                        app.root.current = "fourth"
-                        root.manager.transition.direction = "down"
-
-                MDFillRoundFlatButton:
-                    size_hint_x: .5
-                    text: "Drinks"
-                    font_size: 12
-                    pos_hint: {"center_x": 0.5}
-                    on_press:
-                        app.root.current = "fourth"
-                        root.manager.transition.direction = "down"
-
 
 
                 MDFillRoundFlatButton:
-                    size_hint_x: .5
-                    text: "Go back to Menu"
+                    size_hint_x: .4
+                    text: "Cola"
                     font_size: 12
-                    pos_hint: { "center_x": 0.5 }
+                    pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
-                        app.root.current = "fourth"
-                        root.manager.transition.direction = "down"
-        Image:
-            source: "GUI Structure and resources/images/wip2.png"
-            size_hint_x: 0.8
+
+                Image:
+                    source: "GUI Structure and resources\images\chili tortilla chips.png"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    padding: 10
+
+                Image:
+                    source: "GUI Structure and resources\images\sprite.png"
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    padding: 10
+                
+                MDFillRoundFlatButton:
+                    size_hint_x: .4
+                    text: "chili tortilla chips"
+                    font_size: 12
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    on_press:
+
+
+                MDFillRoundFlatButton:
+                    size_hint_x: .4
+                    text: "Sprite"
+                    font_size: 12
+                    pos_hint: { "center_x": .5, "center_y": .5 }
+                    on_press:
+                        
+
+        MDFillRoundFlatButton:
+            padding: 20
+            size_hint_x: .5
+            text: "Go back to Menu"
+            font_size: 12
             pos_hint: { "center_x": 0.5 }
+            on_press:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "down"
 
