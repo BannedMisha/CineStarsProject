@@ -21,7 +21,70 @@ import json
 
 ========================================================================================================================
 """
+# -----------------------------------------------------------------------------
+# THESE ARE THE FUNCTIONS I PREVIOUSLY MODIFIED AB HIER
+# -----------------------------------------------------------------------------
 
+# I know now we have convert_id_to_name and vice versa, but I'll leave it like this for now
+def read_from_file_mod(file, category, ID, item):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for content in data.get(category):
+        if content['aAcN'] == ID:
+            return content.get(item)
+
+def delete_entry_from_file_mod(file, ID, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aAcN') == ID:
+            for key in entry.keys():
+                if key != 'aAcN':
+                    entry[key] = None
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
+
+
+def edit_entry_from_file_mod(file, ID, instance, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aAcN') == ID:
+            for key, value in instance.items():
+                if key != 'aAcN':
+                    entry[key] = value
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
+
+# This fixes a bug
+
+def edit_entry_from_file_modified(file, ID, instance, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aAcN') == ID:
+            for key, value in instance.items():
+                if value:  # Only update if a non-empty value is provided
+                    entry[key] = value
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
+
+# I think this was deleted? I'm still using it though
+def write_to_file(file, instance, category) -> None:
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    data[category].append(instance)
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)
 
 # Function to save a classes attributes to their corresponding JSON file
 # file     : the name of the file (E.g. "saved_classes/movie_program.json")
