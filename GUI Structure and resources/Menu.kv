@@ -2,7 +2,7 @@
     name: "fourth"
     MDCard:
         size_hint:None, None
-        size: 350, 500
+        size: 400, 600
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
         elevation:10
         padding:25
@@ -24,7 +24,7 @@
                 MDLabel:
                     id: pers_info
                     text: "Menu"
-                    font_size: 20
+                    font_size: 25
                     halign: 'center'
                     size_hint_y: None
                     height: self.texture_size[1]
@@ -33,9 +33,13 @@
                 MDRectangleFlatIconButton:
                     icon: "movie-roll"
                     size_hint_x: .5
-                    text: "Cinema listings"
-                    font_size: 12
+                    text: "Movies"
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1 
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     on_press:
                         app.root.current = "sixth"
                         root.manager.transition.direction = "down"
@@ -44,8 +48,12 @@
                     icon: "food-fork-drink"
                     size_hint_x: .5
                     text: "Food and Drinks"
-                    font_size: 12
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1 
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     on_press:
                         app.root.current = "seventh"
                         root.manager.transition.direction = "down"
@@ -54,8 +62,12 @@
                     icon: "heart"
                     size_hint_x: .5
                     text: "Wishlist"
-                    font_size: 12
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 0, 0, 1 
                     on_press:
                         app.root.current = "eighth"
                         root.manager.transition.direction = "down"
@@ -64,8 +76,12 @@
                     icon: "account-details"
                     size_hint_x: .5
                     text: "My Account"
-                    font_size: 12
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1 
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     on_press:
                         app.root.current = "fifth"
                         root.manager.transition.direction = "up"
@@ -74,8 +90,12 @@
                     icon: "history"
                     size_hint_x: .5
                     text: "My orders"
-                    font_size: 12
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1 
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     on_press:
                         app.root.current = "ninth"
                         root.manager.transition.direction = "down"
@@ -85,22 +105,17 @@
                     icon: "account-off"
                     size_hint_x: .5
                     text: "Log out"
-                    font_size: 12
+                    font_size: 15
                     pos_hint: {"center_x": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: 1, 1, 1, 1 
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     on_press:
                         root.logout_account()
                         app.root.current = "first"
                         root.manager.transition.direction = "down"
 
-                MDRectangleFlatIconButton:
-                    icon: "cash"
-                    size_hint_x: .5
-                    text: "Buy Ticket, this stays here for now"
-                    font_size: 12
-                    pos_hint: { "center_x": 0.5 }
-                    on_press:
-                        app.root.current = "eleven"
-                        root.manager.transition.direction = "down"
 
         Image:
             source: "GUI Structure and resources/images/logo.png"

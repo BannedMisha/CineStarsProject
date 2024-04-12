@@ -6,7 +6,7 @@
 
     MDCard:
         size_hint:None, None
-        size: 350, 500
+        size: 400, 600
         pos_hint: {"center_x": 0.5, "center_y": 0.5}
         elevation:10
         padding:15
@@ -45,29 +45,39 @@
             pos_hint:{"center_x": 0.5}
             password: True
 
+        MDFillRoundFlatButton:
+            text: "SUBMIT"
+            font_size:15
+            pos_hint:{"center_x": 0.5}
+            padding: 10
+            size_hint: None, None  
+            size: 200, 50 
+            on_press:
+                root.submit()
+                #app.root.current = "fourth"
+                root.manager.transition.direction = "up"
+
         BoxLayout:
             orientation: "horizontal"
             spacing: 10
-            padding: 35
+            size_hint: None, None
+            size: self.minimum_size  # Größe auf die tatsächliche Größe des Inhalts setzen
+            pos_hint: {"center_x": 0.5} 
+            
 
-
-
-            MDFillRoundFlatButton:
-                text: "SUBMIT"
-                font_size:12
-                on_press:
-                    root.submit()
-                  #app.root.current = "fourth"
-                    root.manager.transition.direction = "up"
 
             MDFillRoundFlatButton:
                 text: "CLEAR"
-                font_size: 12
+                font_size: 15
+                size_hint: None, None  
+                size: 200, 50 
                 on_press: root.clear()
 
             MDFillRoundFlatButton:
                 text: "GO BACK"
-                font_size: 12
+                size_hint: None, None  
+                size: 200, 50 
+                font_size: 15
                 on_press:
                     app.root.current = "first"
                     root.manager.transition.direction = "down"
@@ -75,4 +85,6 @@
 
 
         Image:
+            size_hint: (0.3, 0.3) 
+            pos_hint: { "center_x": 0.5 }
             source: "GUI Structure and resources/images/logo.png"

@@ -12,6 +12,8 @@ from kivy.properties import ListProperty
 from kivy.properties import ObjectProperty
 from kivy.uix.spinner import SpinnerOption
 from datetime import datetime
+from kivy.core.window import Window
+
 
 
 # Global variables to track login statuss
@@ -319,6 +321,7 @@ class MainApp(MDApp):
     all the app's screens
     """
     def build(self):
+        Window.size = (1080, 700)
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "BlueGray"
         screen_manager = WindowManager()
