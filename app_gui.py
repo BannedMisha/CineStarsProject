@@ -1,7 +1,5 @@
 from imports import *
 
-
-
 # Global variables to track login statuss
 loggedIn = False
 logged_user = ""
