@@ -47,20 +47,26 @@
                     size: "100dp", "100dp"
                     padding: 10
 
-                MDFillRoundFlatButton:
+                MDRectangleFlatIconButton:
                     size_hint_x: .4
                     text: "Popcorn"
-                    font_size: 12
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
+                    font_size: 15
                     pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
+                        root.add_snacks_to_order("Popcorn")
 
 
-                MDFillRoundFlatButton:
+                MDRectangleFlatIconButton:
                     size_hint_x: .4
                     text: "Cola"
-                    font_size: 12
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
+                    font_size: 15
                     pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
+                        root.add_snacks_to_order("Cola")
 
                 Image:
                     source: "GUI Structure and resources\images\chili tortilla chips.png"
@@ -76,20 +82,26 @@
                     size: "100dp", "100dp"
                     padding: 10
                 
-                MDFillRoundFlatButton:
+                MDRectangleFlatIconButton:
                     size_hint_x: .4
                     text: "chili tortilla chips"
-                    font_size: 12
+                    font_size: 15
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
+                        root.add_snacks_to_order("chili tortilla chips")
 
 
-                MDFillRoundFlatButton:
+                MDRectangleFlatIconButton:
                     size_hint_x: .4
                     text: "Sprite"
-                    font_size: 12
+                    font_size: 15
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1 
                     pos_hint: { "center_x": .5, "center_y": .5 }
                     on_press:
+                        root.add_snacks_to_order("Sprite")
                         
 
         MDFillRoundFlatButton:

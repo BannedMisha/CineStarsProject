@@ -20,6 +20,7 @@
                 size_hint_y: None
                 height: self.minimum_height
                 anchor_x: 'center'
+                padding: [0, 10]  # Reduzierter Abstand oben und unten
 
                 MDLabel:
                     text: "Order History"
@@ -36,7 +37,6 @@
                     halign: 'left'
                     size_hint_y: None
                     height: self.texture_size[1] * len(app.orders) if app.orders else 0
-                    
 
                 MDFillRoundFlatButton:
                     size_hint_x: .5

@@ -197,7 +197,18 @@ class ListingsScreen(Screen):
 
 
 class FoodScreen(Screen):
-    pass
+
+    def add_to_orders(self, order_info):
+        app = MDApp.get_running_app()
+        app.orders.append(order_info)
+
+    def add_snacks_to_order(self, order_info):
+        order_info = {"Snacks and drinks": order_info}
+        self.add_to_orders(order_info)
+        pop = Popup(title='Bummer',
+            content=Label(text='Your Order has been added to your Orders list!'),
+            size_hint=(None, None), size=(500, 100))
+        pop.open()
 
 
 class WishlistScreen(Screen):
@@ -221,8 +232,11 @@ class OrdersScreen(Screen):
         orders_label.text = ""
         app = MDApp.get_running_app()
         orders = app.orders
-        for ticket_info in orders:
-            orders_label.text += f"Movie: {ticket_info['movie']}\n Date: {ticket_info['date']}\n\n\n"
+        for item in orders:
+            for key, value in item.items():
+                orders_label.text += f"{key}: {value}\n"
+            orders_label.text += "\n"
+            
 
 
 class DeleteAccountScreen(Screen):
@@ -260,7 +274,7 @@ class BuyTicket(Screen, Widget):
 
         if selected_movie:
             # Hier kann die Logik für den Ticketkauf implementiert werden
-            ticket_info = {"movie": selected_movie, "date": datetime.now()}  # Beispielinformationen für das Ticket
+            ticket_info = {"movie": selected_movie, "date": datetime.now().strftime("%d-%m-%Y")}  # Beispielinformationen für das Ticket
             self.add_to_orders(ticket_info)
             pop = Popup(title='Congratulations!',
                         content=Label(text='Your ticket has been purchased!'),
