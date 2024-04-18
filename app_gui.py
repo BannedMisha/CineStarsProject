@@ -5,6 +5,7 @@ loggedIn = False
 logged_user = ""
 
 
+
 class WelcomeScreen(Screen):
     pass
 
@@ -28,10 +29,10 @@ class LogInScreen(Screen):
         for entry in data["users"]:
             if entry.get("aAcN") == aAcN and entry.get("aPas") == aPas:
                 loggedIn = True
-                logged_user = aAcN
-                pop = Popup(title='Congrats',
-                            content=Label(text='Login successful!.'),
-                            size_hint=(None, None), size=(200, 100))
+                logged_user = entry  # Store the entire user entry
+                pop = Popup(title='Welcome back',
+                            content=Label(text=f'Welcome back, {logged_user["aAcN"]}!'),  # Use logged_user["aAcN"]
+                            size_hint=(None, None), size=(300, 150))
                 pop.open()
                 self.manager.current = 'fourth'
                 break
@@ -158,15 +159,15 @@ class MyAccount(Screen):
     This function changes the hint text in the fill in text forms using the information from the User JSON file.
     """
 
+
     def change_hint_text(self):
         global logged_user
-        self.ids.user_id.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aID")
         self.ids.user_user.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aAcN")
         self.ids.f_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aFiN")
         self.ids.l_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aLaN")
         self.ids.b_day.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aBiD")
         self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
-        self.ids.passs.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aPas")
+
 
 
 
@@ -188,7 +189,7 @@ class FoodScreen(Screen):
         self.add_to_orders(order_info)
         pop = Popup(title='Bummer',
             content=Label(text='Your Order has been added to your Orders list!'),
-            size_hint=(None, None), size=(500, 100))
+            size_hint=(None, None), size=(500, 150))
         pop.open()
 
 
@@ -259,7 +260,7 @@ class BuyTicket(Screen, Widget):
             self.add_to_orders(ticket_info)
             pop = Popup(title='Congratulations!',
                         content=Label(text='Your ticket has been purchased!'),
-                        size_hint=(None, None), size=(300, 100))
+                        size_hint=(None, None), size=(400, 150))
             pop.open()
         else:
             pop = Popup(title='Oops!',
