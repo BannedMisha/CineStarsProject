@@ -168,25 +168,6 @@ class MyAccount(Screen):
         self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
         self.ids.passs.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aPas")
 
-    def edit_user_info(self):
-        """
-        This function tracks the instance of the logged user, and edits the user's account information based on the
-        entered information. If in the text fields wasn't entered any information the attribute values will remain
-        unchanged.
-        """
-        global logged_user
-        file = "saved_classes/user.json"
-
-        instance = {
-                    "aAcN": self.ids.user_user.text,
-                    "aFiN": self.ids.f_name.text,
-                    "aLaN": self.ids.l_name.text,
-                    "aBiD": self.ids.b_day.text,
-                    "aEma": self.ids.eml.text,
-                    "aPas": self.ids.passs.text}
-        category = "users"
-        ID = logged_user
-        Tools.edit_entry_from_file_modified(file, ID, instance, category)
 
 
 class ListingsScreen(Screen):

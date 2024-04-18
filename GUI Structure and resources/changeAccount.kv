@@ -28,6 +28,7 @@
             do_scroll_y:True
 
             GridLayout:
+                id: user_info_layout
                 cols: 1
                 spacing: 10
                 size_hint_y: None
@@ -119,15 +120,6 @@
                     font_size: 12
                     pos_hint: { "center_x": 0.5 }
                     on_press: root.change_hint_text()
-
-                MDFillRoundFlatButton:
-                    text: "Save"
-                    font_size: 12
-                    pos_hint: {"center_x": 0.5}
-                    on_release: Factory.MyPopup().open()
-                    on_press:
-                        #root.change_hint_text()
-                        root.edit_user_info()
 
                 MDFillRoundFlatButton:
                     text: "Go back to menu"

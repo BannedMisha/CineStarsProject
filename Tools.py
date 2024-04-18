@@ -32,7 +32,9 @@ def read_from_file_mod(file, category, ID, item):
 
     for content in data.get(category):
         if content['aAcN'] == ID:
-            return content.get(item)
+            value = content.get(item)
+            return value if value is not None else ""
+    return ""  # Return an empty string if no value is found
 
 def delete_entry_from_file_mod(file, ID, category):
     with open(file) as jFile:
@@ -47,34 +49,6 @@ def delete_entry_from_file_mod(file, ID, category):
     with open(file, 'w') as wFile:
         json.dump(data, wFile, indent=4)
 
-
-def edit_entry_from_file_mod(file, ID, instance, category):
-    with open(file) as jFile:
-        data = json.load(jFile)
-
-    for entry in data[category]:
-        if entry.get('aAcN') == ID:
-            for key, value in instance.items():
-                if key != 'aAcN':
-                    entry[key] = value
-
-    with open(file, 'w') as wFile:
-        json.dump(data, wFile, indent=4)
-
-# This fixes a bug
-
-def edit_entry_from_file_modified(file, ID, instance, category):
-    with open(file) as jFile:
-        data = json.load(jFile)
-
-    for entry in data[category]:
-        if entry.get('aAcN') == ID:
-            for key, value in instance.items():
-                if value:  # Only update if a non-empty value is provided
-                    entry[key] = value
-
-    with open(file, 'w') as wFile:
-        json.dump(data, wFile, indent=4)
 
 # I think this was deleted? I'm still using it though
 def write_to_file(file, instance, category) -> None:
