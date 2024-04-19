@@ -186,7 +186,7 @@ class FoodScreen(Screen):
     def add_snacks_to_order(self, order_info):
         order_info = {"Snacks and drinks": order_info}
         self.add_to_orders(order_info)
-        pop = Popup(title='Bummer',
+        pop = Popup(title='Success',
             content=Label(text='Your Order has been added to your cart!'),
             size_hint=(None, None), size=(500, 150))
         pop.open()
