@@ -31,20 +31,20 @@
 
                 MDLabel:
                     id: label_movie
-                    text: "Selected Movie:"
+                    text: "Select Movie:"
                     size_hint_y: None
                     height: self.texture_size[1]
 
                 Spinner:
                     id: spinner_movie
-                    text: "Select the movie"
+                    text: "Click Me!"
                     size_hint: None, None
                     size: 200, 50
                     values: ["Armageddon", "Forest Gump", "James Bond", "The Godfather", "The Godfather II", "The Lord of the Rings: The Fellowship of the Ring", "Pulp Fiction", "The Shawshank Redemption", "The Dark Knight", "12 Angry Men", "Schindler's List", "The Good, the Bad and the Ugly", "Fight Club", "Inception"]
                     on_text: root.show_spinner_values(spinner_movie.text)
 
                 MDFillRoundFlatButton:
-                    text: "BUY"
+                    text: "Add to your cart"
                     font_size: 15
                     pos_hint: { "center_x": 0.5 }
                     on_press:

@@ -26,21 +26,16 @@ import json
 # -----------------------------------------------------------------------------
 
 # I know now we have convert_id_to_name and vice versa, but I'll leave it like this for now
-def read_from_file_mod(file, category, username, item):
+def get_user_data(file, username):
     with open(file) as jFile:
         data = json.load(jFile)
 
-    for user in data.get(category, []):
+    for user in data.get('users', []):
         if user.get("aAcN") == username:
-            if item in ['aAcN', 'aFiN', 'aLaN', 'aBiD', 'aEma']:
-                value = user.get(item)
-                print(f"Found value: {value}")
-                return value if value is not None else ""
-            else:
-                print("Item not found in allowed list")
-                return ""
+            return user
+    
     print("Username not found")
-    return ""
+    return None
 
 
 def delete_entry_from_file_mod(file, ID, category):

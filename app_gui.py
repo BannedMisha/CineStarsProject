@@ -155,19 +155,18 @@ class MenuScreen(Screen):
 
 
 class MyAccount(Screen):
-    """
-    This function changes the hint text in the fill in text forms using the information from the User JSON file.
-    """
-
 
     def change_hint_text(self):
         global logged_user
-        self.ids.user_user.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aAcN")
-        self.ids.f_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aFiN")
-        self.ids.l_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aLaN")
-        self.ids.b_day.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aBiD")
-        self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
-
+        user_data = Tools.get_user_data("saved_classes/user.json", logged_user)
+        if user_data:
+            self.ids.user_user.hint_text = user_data.get("aAcN")
+            self.ids.f_name.hint_text = user_data.get("aFiN")
+            self.ids.l_name.hint_text = user_data.get("aLaN")
+            self.ids.b_day.hint_text = user_data.get("aBiD")
+            self.ids.eml.hint_text = user_data.get("aEma")
+        else:
+            print("Benutzer nicht gefunden.")
 
 
 
@@ -188,7 +187,7 @@ class FoodScreen(Screen):
         order_info = {"Snacks and drinks": order_info}
         self.add_to_orders(order_info)
         pop = Popup(title='Bummer',
-            content=Label(text='Your Order has been added to your Orders list!'),
+            content=Label(text='Your Order has been added to your cart!'),
             size_hint=(None, None), size=(500, 150))
         pop.open()
 
@@ -259,7 +258,7 @@ class BuyTicket(Screen, Widget):
             ticket_info = {"movie": selected_movie, "date": datetime.now().strftime("%d-%m-%Y")}  # Beispielinformationen für das Ticket
             self.add_to_orders(ticket_info)
             pop = Popup(title='Congratulations!',
-                        content=Label(text='Your ticket has been purchased!'),
+                        content=Label(text='Your order has been added to your cart!'),
                         size_hint=(None, None), size=(400, 150))
             pop.open()
         else:
