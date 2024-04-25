@@ -1,9 +1,8 @@
 from imports import *
 
-# Global variables to track login statuss
+# Global variables to track login status
 loggedIn = False
 logged_user = ""
-
 
 
 class WelcomeScreen(Screen):
@@ -29,9 +28,9 @@ class LogInScreen(Screen):
         for entry in data["users"]:
             if entry.get("aAcN") == aAcN and entry.get("aPas") == aPas:
                 loggedIn = True
-                logged_user = entry  # Store the entire user entry
+                logged_user = aAcN
                 pop = Popup(title='Welcome back',
-                            content=Label(text=f'Welcome back, {logged_user["aAcN"]}!'),  # Use logged_user["aAcN"]
+                            content=Label(text=f'Welcome back, {logged_user}!'),  # Use logged_user["aAcN"]
                             size_hint=(None, None), size=(300, 150))
                 pop.open()
                 self.manager.current = 'fourth'
@@ -57,7 +56,6 @@ class LogInScreen(Screen):
         else:
             self.login_account()
             self.clear()
-
 
     """
     This function clears the username and password fields
@@ -155,20 +153,37 @@ class MenuScreen(Screen):
 
 
 class MyAccount(Screen):
+    """
+    This function changes the hint text in the fill in text forms using the information from the User JSON file.
+    """
 
     def change_hint_text(self):
         global logged_user
-        user_data = Tools.get_user_data("saved_classes/user.json", logged_user)
-        if user_data:
-            self.ids.user_user.hint_text = user_data.get("aAcN")
-            self.ids.f_name.hint_text = user_data.get("aFiN")
-            self.ids.l_name.hint_text = user_data.get("aLaN")
-            self.ids.b_day.hint_text = user_data.get("aBiD")
-            self.ids.eml.hint_text = user_data.get("aEma")
-        else:
-            print("Benutzer nicht gefunden.")
+        self.ids.user_user.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aAcN")
+        self.ids.f_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aFiN")
+        self.ids.l_name.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aLaN")
+        self.ids.b_day.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aBiD")
+        self.ids.eml.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aEma")
+        self.ids.passs.hint_text = Tools.read_from_file_mod("saved_classes/user.json", "users", logged_user, "aPas")
 
+    def edit_user_info(self):
+        """
+        This function tracks the instance of the logged user, and edits the user's account information based on the
+        entered information. If in the text fields wasn't entered any information the attribute values will remain
+        unchanged.
+        """
+        global logged_user
+        file = "saved_classes/user.json"
 
+        instance = {"aAcN": self.ids.user_user.text,
+                    "aFiN": self.ids.f_name.text,
+                    "aLaN": self.ids.l_name.text,
+                    "aBiD": self.ids.b_day.text,
+                    "aEma": self.ids.eml.text,
+                    "aPas": self.ids.passs.text}
+        category = "users"
+        ID = logged_user
+        Tools.edit_entry_from_file_modified(file, ID, instance, category)
 
 class ListingsScreen(Screen):
     def add_to_wishlist(self, film_name):
@@ -218,7 +233,6 @@ class OrdersScreen(Screen):
                 orders_label.text += f"{key}: {value}\n"
             orders_label.text += "\n"
             
-
 
 class DeleteAccountScreen(Screen):
     def delete_user_account(self):
@@ -292,6 +306,7 @@ Builder.load_file("GUI Structure and resources/buy_ticket.kv")
 
 class MainApp(MDApp):
     orders = ListProperty([])  # Hier initialisieren Sie die Bestellungen
+
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
         self.wishlist = []

@@ -363,3 +363,29 @@ def show_full_program(thisWeek) -> dict:
         movieProgram = json.load(jFile)
 
     return movieProgram
+
+
+def read_from_file_mod(file, category, ID, item):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for content in data.get(category):
+        if content['aAcN'] == ID:
+            return content.get(item)
+
+
+test = read_from_file_mod("saved_classes/user.json", "users", "mara", "aPas")
+print(test)
+
+def edit_entry_from_file_modified(file, ID, instance, category):
+    with open(file) as jFile:
+        data = json.load(jFile)
+
+    for entry in data[category]:
+        if entry.get('aAcN') == ID:
+            for key, value in instance.items():
+                if value:  # Only update if a non-empty value is provided
+                    entry[key] = value
+
+    with open(file, 'w') as wFile:
+        json.dump(data, wFile, indent=4)

@@ -1,37 +1,20 @@
 {
     "users": [
         {
-            "aID": "sad",
-            "aAcN": "sdsd",
-            "aFiN": "asdas",
-            "aLaN": "asd",
-            "aBiD": "asd",
-            "aEma": "asd",
-            "aPas": "asd"
+            "aAcN": "wertre",
+            "aFiN": "wer",
+            "aLaN": "wqer",
+            "aBiD": "wqer",
+            "aEma": "qwer",
+            "aPas": "qwe"
         },
         {
-            "aAcN": "majd",
-            "aFiN": "majd",
-            "aLaN": "majd",
-            "aBiD": "2221512",
-            "aEma": "dsadwes",
-            "aPas": "1"
-        },
-        {
-            "aAcN": "1",
-            "aFiN": "1",
-            "aLaN": "1",
-            "aBiD": "1",
-            "aEma": "1",
-            "aPas": "1"
-        },
-        {
-            "aAcN": "Majd",
-            "aFiN": "Majd",
-            "aLaN": "Almotaem",
-            "aBiD": "26.03.1998",
-            "aEma": "majd@gmail.com",
-            "aPas": "1"
+            "aAcN": "maria",
+            "aFiN": "qwe",
+            "aLaN": "er",
+            "aBiD": "rrtb",
+            "aEma": "er",
+            "aPas": "1234"
         }
     ]
 }
