@@ -27,7 +27,6 @@ def create_drink_menu():
 
 
 """
-    FOR ARLIND:
     Add more stuff below this point here. Make it cool. Add whatever functionality could work for a Popcorn Machine.
     Real functional code, not pseudocode.
 """
