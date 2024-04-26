@@ -126,7 +126,7 @@ class CreateAccountScreen(Screen):
                         content=Label(text='Account successfully created!.'),
                         size_hint=(None, None), size=(250, 100))
             pop.open()
-            self.manager.current = 'fourth'
+            self.manager.current = 'second'
 
 
 class MenuScreen(Screen):
