@@ -25,6 +25,14 @@ def create_drink_menu():
     return driList
 
 
+#
+#       AD OVERLOADED DISPATCH FUNCTION HERE, ACCEPT EITHER DRINK OR POPCORN
+#       RECURSION????
+#       MAKE THIS A SINGLETON
+#       __STR__ ÜBERLADEN
+#       deep and shallow copies
+#
+
 
 """
     Add more stuff below this point here. Make it cool. Add whatever functionality could work for a Popcorn Machine.

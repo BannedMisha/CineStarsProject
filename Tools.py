@@ -289,7 +289,6 @@ def populate_movie_seats(idTheater, thisWeek):
 
     This block contains major functionality for the functions in App.py
     > Buys a ticket, returns True if a ticket has successfully been bought
-    > Saves a bought ticket to the JSON file (NYI)
     > Display movie program as a list
     > Display movie program as a dictionary including available seats
 
@@ -323,16 +322,6 @@ def ticket_buyer(thisWeek, day, movieID) -> bool:
             json.dump(movieProgram,jFile, indent=4)
 
     return ticketBought
-
-# Saves the ticket that has been bought to a json file
-# userID   : the ID of the user
-# movieID  : the ID of the movie that the ticket has been bought for
-# thisWeek : boolean, True for current week, False for next week
-# day      : which day the movie was bought
-# this should be automatically activate when App.buy_ticket() returns True
-def ticket_saver(userID, movieID, thisWeek, day):
-
-    pass
 
 # This function displays a list of all the movies that are being aired in a theater
 # id_theater : the ID of the theater we want to see the movie list of
@@ -377,7 +366,7 @@ def read_from_file_mod(file, category, ID, item):
 test = read_from_file_mod("saved_classes/user.json", "users", "mara", "aPas")
 print(test)
 
-def edit_entry_from_file_modified(file, ID, instance, category):
+def edit_entry_from_file_modified(file, ID, instance, category) -> None:
     with open(file) as jFile:
         data = json.load(jFile)
 
